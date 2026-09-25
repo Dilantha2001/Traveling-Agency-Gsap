@@ -1,0 +1,160 @@
+.about-nevio-section {
+  width: 100%;
+  padding: 100px 5% 60px 5%;
+  background-color: #f7f4ed; /* Off-white/cream background */
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.about-nevio-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-nevio-text {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.nevio-tag {
+  display: inline-block;
+  color: #c2410c; /* reddish orange */
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.nevio-title {
+  font-size: 4.5rem;
+  font-weight: 500;
+  color: #2b2b2b;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+}
+
+.nevio-desc {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nevio-explore-btn-group {
+  display: inline-flex;
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nevio-explore-btn-group:hover {
+  transform: translateY(-5px);
+}
+
+.nevio-explore-btn-group .btn-text {
+  background-color: #fce762;
+  color: #1a1a1a;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px 0 0 4px;
+}
+
+.nevio-explore-btn-group .btn-icon {
+  background-color: #2b2b2b;
+  color: #fff;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gallery Slideshow */
+.nevio-gallery-wrapper {
+  width: 100vw; /* full screen width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 40px 0; /* Space for stagger-up and down */
+}
+
+.nevio-marquee {
+  display: flex;
+  width: 200%;
+}
+
+.nevio-marquee-content {
+  display: flex;
+  gap: 15px;
+  width: 50%; /* Each content block is 50% of the 200% width */
+  animation: slideGallery 35s linear infinite;
+  padding-right: 15px; /* ensure gap before next duplicate block */
+}
+
+@keyframes slideGallery {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.nevio-marquee:hover .nevio-marquee-content {
+  animation-play-state: paused;
+}
+
+.nevio-img-wrapper {
+  width: 220px;
+  height: 275px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  flex-shrink: 0;
+  /* subtle drop shadow */
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+
+.stagger-up {
+  transform: translateY(-20px);
+}
+
+.stagger-down {
+  transform: translateY(20px);
+}
+
+.torn-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Apply SVG filter for torn paper effect */
+  filter: url(#torn-edge);
+}
+
+@media (max-width: 1024px) {
+  .nevio-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nevio-title {
+    font-size: 2.5rem;
+  }
+  .about-nevio-section {
+    padding: 60px 5% 40px 5%;
+  }
+  .nevio-img-wrapper {
+    width: 160px;
+    height: 200px;
+  }
+}

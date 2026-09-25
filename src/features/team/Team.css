@@ -1,0 +1,112 @@
+.team-section {
+  width: 100%;
+  padding: 100px 5%;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-tag {
+  display: inline-block;
+  color: #c2410c; /* reddish orange */
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.team-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #2b2b2b;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.team-cards-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+
+.team-card {
+  flex: 1;
+  background-color: #f7f4ed; /* cream color matching the design */
+  border-radius: 16px;
+  padding: 25px 15px 15px 15px; /* Top padding is larger for the name */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-member-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 25px 0;
+  text-align: center;
+}
+
+.team-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team-role-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .team-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-cards-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .team-title {
+    font-size: 2.5rem;
+  }
+}

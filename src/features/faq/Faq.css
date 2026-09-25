@@ -1,0 +1,143 @@
+.faq-section {
+  width: 100%;
+  min-height: 80vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 10%;
+  font-family: 'Inter', sans-serif; /* Clean sans-serif like the image */
+}
+
+.faq-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+/* Left Side Styling */
+.faq-left {
+  flex: 1;
+  max-width: 400px;
+  position: sticky;
+  top: 100px;
+}
+
+.faq-tag {
+  color: #db6a39; /* Orange */
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.faq-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.faq-description {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Right Side Styling (Accordion) */
+.faq-right {
+  flex: 1.5;
+  width: 100%;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 25px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:first-child {
+  border-top: 1px solid #e0e0e0;
+}
+
+.faq-question-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #666;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+  color: #1a1a1a;
+}
+
+.faq-item.active .faq-icon {
+  color: #db6a39; /* Orange */
+}
+
+/* Arrow Icons */
+.icon-up {
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+.icon-down {
+  display: inline-block;
+}
+
+.faq-answer-wrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.faq-answer {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 15px;
+  padding-right: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .faq-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .faq-left {
+    max-width: 100%;
+    position: relative;
+    top: 0;
+  }
+  
+  .faq-title {
+    font-size: 2.8rem;
+  }
+}

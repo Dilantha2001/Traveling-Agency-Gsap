@@ -1,0 +1,160 @@
+.destinations-section {
+  padding: 80px 5%;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.dest-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.dest-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.dest-main-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #2b2b2b;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.dest-filters {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  border: 1px solid #eaeaea;
+  border-radius: 40px;
+  background: #fff;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #f7f4ed;
+}
+
+.filter-btn.active {
+  background: #2b2b2b;
+  color: #fff;
+}
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.dest-card {
+  background-color: #f7f4ed;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.dest-card:hover {
+  transform: translateY(-5px);
+}
+
+.dest-card-top {
+  margin-bottom: 20px;
+}
+
+.dest-country {
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.dest-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.dest-name {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #2b2b2b;
+  margin: 0;
+}
+
+.dest-price {
+  text-align: right;
+}
+
+.price-from {
+  font-size: 0.8rem;
+  color: #666;
+  margin-right: 4px;
+}
+
+.price-val {
+  font-size: 1.2rem;
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+.dest-desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.dest-img-wrapper {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.dest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.dest-card:hover .dest-img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .dest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dest-grid {
+    grid-template-columns: 1fr;
+  }
+  .dest-main-title {
+    font-size: 2.5rem;
+  }
+}

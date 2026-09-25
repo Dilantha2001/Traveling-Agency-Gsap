@@ -1,0 +1,148 @@
+.adventure-section {
+  padding: 5rem 2rem;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+
+.adventure-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Left side: Rotated Text */
+.adventure-left {
+  flex: 0 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.adventure-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #333;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+/* Middle side: Large Image */
+.adventure-middle {
+  flex: 1.5;
+  display: flex;
+  position: relative;
+}
+
+.adventure-img-large-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.adventure-img-large {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Red Save Badge */
+.adventure-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #e60023;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Price Badge */
+.adventure-price-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #f4d03f;
+  color: #000;
+  padding: 15px 25px;
+  border-top-right-radius: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.adventure-price-badge .price {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+/* Right side: 3 Small Images */
+.adventure-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.adventure-img-small-wrapper {
+  flex: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.adventure-img-small {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.adventure-img-small-wrapper:hover .adventure-img-small {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .adventure-container {
+    flex-direction: column;
+  }
+  .adventure-left {
+    flex: 0 0 auto;
+    justify-content: flex-start;
+  }
+  .adventure-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin-bottom: 1rem;
+  }
+  .adventure-right {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .adventure-right {
+    flex-direction: column;
+  }
+}
