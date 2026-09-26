@@ -6,6 +6,8 @@ import './VideoSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import videoImg from '../../assets/safari_savanna.webp';
+
 const VideoSection = () => {
   const containerRef = useRef(null);
 
@@ -46,7 +48,7 @@ const VideoSection = () => {
         {/* Background Video (Using image for demo purposes since we don't have video file) */}
         <div className="video-background">
           <img 
-            src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1920&q=80" 
+            src={videoImg} 
             alt="Beautiful coastline" 
             className="video-element"
           />

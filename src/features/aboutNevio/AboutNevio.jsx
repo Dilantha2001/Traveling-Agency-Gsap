@@ -6,6 +6,19 @@ import './AboutNevio.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import img1 from '../../assets/pexels-rajitha-fernando-525223-1259789.webp';
+import img2 from '../../assets/pexels-charithk-6337422.webp';
+import img3 from '../../assets/pexels-gihans-11309702.webp';
+import img4 from '../../assets/pexels-andromeda99-17801597.webp';
+import img5 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp';
+import img6 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873300.webp';
+import img7 from '../../assets/pexels-samiulhaquebhuyan-30563640.webp';
+import img8 from '../../assets/coast.webp';
+import img9 from '../../assets/mountain.webp';
+import img10 from '../../assets/safari_savanna.webp';
+import img11 from '../../assets/maldives_beach.webp';
+import img12 from '../../assets/hero.webp';
+
 const AboutNevio = () => {
   const containerRef = useRef(null);
 
@@ -38,18 +51,7 @@ const AboutNevio = () => {
   }, { scope: containerRef });
 
   const galleryImages = [
-    "https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&w=400&q=80", // Ella
-    "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=400&q=80", // Sigiriya
-    "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=400&q=80", // Elephants
-    "https://images.unsplash.com/photo-1536697246787-1f27c65664cb?auto=format&fit=crop&w=400&q=80", // Beach
-    "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=400&q=80", // Tea
-    "https://images.unsplash.com/photo-1550616124-b5f7e6e5a6fc?auto=format&fit=crop&w=400&q=80", // Nine Arch
-    "https://images.unsplash.com/photo-1569437061241-a848be43cc82?auto=format&fit=crop&w=400&q=80", // Kandy/Galle
-    "https://images.unsplash.com/photo-1620608734992-564560ea515d?auto=format&fit=crop&w=400&q=80", // Sri Lanka temple
-    "https://images.unsplash.com/photo-1625736302482-16629dc887da?auto=format&fit=crop&w=400&q=80", // Lotus Tower
-    "https://images.unsplash.com/photo-1601004838382-774fbe666ee3?auto=format&fit=crop&w=400&q=80", // Nature
-    "https://images.unsplash.com/photo-1596700818227-a6bdcb2d5bfb?auto=format&fit=crop&w=400&q=80", // Train
-    "https://images.unsplash.com/photo-1586520792376-74fc21fc2a5d?auto=format&fit=crop&w=400&q=80", // Stilt fishermen
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12
   ];
 
   return (
@@ -79,32 +81,32 @@ const AboutNevio = () => {
           </button>
         </div>
 
-        {/* Gallery Slideshow */}
-        <div className="nevio-gallery-wrapper">
-          <div className="nevio-marquee">
-            <div className="nevio-marquee-content">
-              {galleryImages.map((imgUrl, index) => (
-                <div 
-                  key={`m1-${index}`} 
-                  className={`nevio-img-wrapper ${index % 2 === 0 ? 'stagger-up' : 'stagger-down'}`}
-                >
-                  <img src={imgUrl} alt={`Sri Lanka ${index}`} className="torn-image" />
-                </div>
-              ))}
-            </div>
-            <div className="nevio-marquee-content">
-              {galleryImages.map((imgUrl, index) => (
-                <div 
-                  key={`m2-${index}`} 
-                  className={`nevio-img-wrapper ${index % 2 === 0 ? 'stagger-up' : 'stagger-down'}`}
-                >
-                  <img src={imgUrl} alt={`Sri Lanka ${index}`} className="torn-image" />
-                </div>
-              ))}
-            </div>
+      </div>
+
+      {/* Gallery Slideshow */}
+      <div className="nevio-gallery-wrapper">
+        <div className="nevio-marquee">
+          <div className="nevio-marquee-content">
+            {galleryImages.map((imgUrl, index) => (
+              <div 
+                key={`m1-${index}`} 
+                className={`nevio-img-wrapper ${index % 2 === 0 ? 'stagger-up' : 'stagger-down'}`}
+              >
+                <img src={imgUrl} alt={`Sri Lanka ${index}`} className="torn-image" />
+              </div>
+            ))}
+          </div>
+          <div className="nevio-marquee-content">
+            {galleryImages.map((imgUrl, index) => (
+              <div 
+                key={`m2-${index}`} 
+                className={`nevio-img-wrapper ${index % 2 === 0 ? 'stagger-up' : 'stagger-down'}`}
+              >
+                <img src={imgUrl} alt={`Sri Lanka ${index}`} className="torn-image" />
+              </div>
+            ))}
           </div>
         </div>
-
       </div>
     </section>
   );

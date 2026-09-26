@@ -6,6 +6,8 @@ import './WhyChooseUs.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import bgImg from '../../assets/mountain.webp';
+
 const WhyChooseUs = () => {
   const containerRef = useRef(null);
 
@@ -53,7 +55,7 @@ const WhyChooseUs = () => {
       {/* Background Image Wrapper for Parallax */}
       <div className="why-bg-wrapper">
         <img 
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80" 
+          src={bgImg} 
           alt="Mountain Landscape" 
           className="why-bg-image"
         />
@@ -71,11 +73,11 @@ const WhyChooseUs = () => {
           <div className="why-cards-row row-top">
             <div className="glass-card">
               <h3>Thoughtfully Curated</h3>
-              <p>Personalized itineraries crafted for<br/>unforgettable travel experiences.</p>
+              <p>Personalized itineraries crafted for<br/>unforgettable Sri Lankan experiences.</p>
             </div>
             <div className="glass-card">
               <h3>Local Expertise</h3>
-              <p>Discover destinations through authentic local<br/>knowledge and expertise.</p>
+              <p>Discover the island through authentic local<br/>knowledge and expertise.</p>
             </div>
           </div>
 

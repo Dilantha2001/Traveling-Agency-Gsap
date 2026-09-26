@@ -1,56 +1,52 @@
 import React, { useState } from 'react';
 import './Gallery.css';
 
+import img1 from '../../assets/amanjahemal-trains-5227361_1920.webp';
+import img2 from '../../assets/niwantha_niluka-mountain-7897203_1920.webp';
+import img3 from '../../assets/oleksandrpidvalnyi-ocean-7029117_1920.webp';
+import img4 from '../../assets/peographic-temple-3649292_1920.webp';
+import img5 from '../../assets/pexels-andromeda99-17801597.webp';
+import img6 from '../../assets/pexels-charithk-6337422.webp';
+import img7 from '../../assets/pexels-dulshan-33080670.webp';
+import img8 from '../../assets/pexels-gihans-11309702.webp';
+import img9 from '../../assets/pexels-harsha-bokalawala-706195915-36002646.webp';
+import img10 from '../../assets/pexels-pexels-user-178764159-11166072.webp';
+import img11 from '../../assets/pexels-rajitha-fernando-525223-1259789.webp';
+import img12 from '../../assets/pexels-roshan-36537671.webp';
+import img13 from '../../assets/pexels-ruwan-lakmal-326724272-33404365.webp';
+import img14 from '../../assets/pexels-samiulhaquebhuyan-30563640.webp';
+import img15 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp';
+import img16 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873300.webp';
+import img17 from '../../assets/nharshanahw-elephant-3903267_1920.webp';
+import img18 from '../../assets/safari_savanna.webp';
+import img19 from '../../assets/maldives_beach.webp';
+import img20 from '../../assets/coast.webp';
+
 const panelsData = [
   {
     id: 1,
-    title: 'Sigiriya Rock',
-    images: [
-      'https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=800&q=80'
-    ]
+    title: 'Cultural Heritage',
+    images: [img4, img6, img13, img15]
   },
   {
     id: 2,
-    title: 'Ella Mountains',
-    images: [
-      'https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=80'
-    ]
+    title: 'Hill Country',
+    images: [img1, img2, img7, img8]
   },
   {
     id: 3,
-    title: 'Mirissa Beach',
-    images: [
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=800&q=80'
-    ]
+    title: 'Tropical Beaches',
+    images: [img3, img5, img11, img14]
   },
   {
     id: 4,
-    title: 'Yala Safari',
-    images: [
-      'https://images.unsplash.com/photo-1551009175-8a68da93d5f9?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?auto=format&fit=crop&w=800&q=80'
-    ]
+    title: 'Wildlife Safari',
+    images: [img17, img18, img9, img12]
   },
   {
     id: 5,
-    title: 'Galle Fort',
-    images: [
-      'https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
-    ]
+    title: 'Scenic Views',
+    images: [img10, img16, img19, img20]
   }
 ];
 

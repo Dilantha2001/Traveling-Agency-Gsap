@@ -3,9 +3,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import './About.css';
-import mountainImage from '../../assets/mountain.jpg';
-import coastImage from '../../assets/coast.jpg';
-import destinationImage from '../../assets/rome_city.jpg';
+import mountainImage from '../../assets/2nd.webp';
+import coastImage from '../../assets/2nd2.webp';
+import destinationImage from '../../assets/2nd3.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,6 +53,27 @@ const About = () => {
             duration: 0.5,
             ease: "power2.inOut"
           });
+        }
+      });
+    });
+
+    // Stats Counter Animation
+    const stats = gsap.utils.toArray('.stat-number');
+    stats.forEach(stat => {
+      const target = parseFloat(stat.getAttribute('data-target'));
+      const isFloat = target % 1 !== 0;
+      const zero = { val: 0 };
+      
+      gsap.to(zero, {
+        val: target,
+        duration: 1, // Sped up the animation
+        ease: "power3.out", // Smoother easing
+        scrollTrigger: {
+          trigger: ".about-stats-container",
+          start: "top 90%", // Trigger when the stats container is 90% in view
+        },
+        onUpdate: function() {
+          stat.innerHTML = isFloat ? zero.val.toFixed(1) : Math.round(zero.val);
         }
       });
     });
@@ -122,7 +143,7 @@ const About = () => {
 
       <div className="about-stats-container">
         <div className="stat-card">
-          <h3>50+</h3>
+          <h3><span className="stat-number" data-target="50">0</span>+</h3>
           <p>
             <span className="stat-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
@@ -131,7 +152,7 @@ const About = () => {
           </p>
         </div>
         <div className="stat-card">
-          <h3>12K+</h3>
+          <h3><span className="stat-number" data-target="12">0</span>K+</h3>
           <p>
             <span className="stat-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm3.5-9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-7 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm3.5 5.5c-2.33 0-4.31-1.46-5.11-3.5h10.22c-.8 2.04-2.78 3.5-5.11 3.5z"/></svg>
@@ -140,7 +161,7 @@ const About = () => {
           </p>
         </div>
         <div className="stat-card">
-          <h3>4.9</h3>
+          <h3><span className="stat-number" data-target="4.9">0.0</span></h3>
           <p>
             <span className="stat-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -149,7 +170,7 @@ const About = () => {
           </p>
         </div>
         <div className="stat-card">
-          <h3>10+</h3>
+          <h3><span className="stat-number" data-target="10">0</span>+</h3>
           <p>
             <span className="stat-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>

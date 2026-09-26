@@ -6,6 +6,9 @@ import './Contact.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import img1 from '../../assets/pexels-dulshan-33080670.webp';
+import img2 from '../../assets/pexels-rajitha-fernando-525223-1259789.webp';
+
 const Contact = () => {
   const containerRef = useRef(null);
 
@@ -28,7 +31,7 @@ const Contact = () => {
       {/* Background Image */}
       <div className="contact-bg">
         <img 
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" 
+          src={img1} 
           alt="Office Background" 
           className="contact-bg-img"
         />
@@ -41,7 +44,7 @@ const Contact = () => {
           {/* Left Side: Image */}
           <div className="contact-image-side">
             <img 
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" 
+              src={img2} 
               alt="Customer Support" 
               className="contact-person-img"
             />

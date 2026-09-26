@@ -6,71 +6,67 @@ import './Testimonials.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import img1 from '../../assets/coast.webp';
+import img2 from '../../assets/maldives_beach.webp';
+import img3 from '../../assets/mountain.webp';
+import img4 from '../../assets/nharshanahw-elephant-3903267_1920.webp';
+import img5 from '../../assets/niwantha_niluka-mountain-7897203_1920.webp';
+import img6 from '../../assets/oleksandrpidvalnyi-ocean-7029117_1920.webp';
+import img7 from '../../assets/peographic-temple-3649292_1920.webp';
+import img8 from '../../assets/pexels-andromeda99-17801597.webp';
+import img9 from '../../assets/pexels-charithk-6337422.webp';
+import img10 from '../../assets/pexels-dulshan-33080670.webp';
+import img11 from '../../assets/pexels-gihans-11309702.webp';
+import img12 from '../../assets/pexels-harsha-bokalawala-706195915-36002646.webp';
+import img13 from '../../assets/pexels-pexels-user-178764159-11166072.webp';
+import img14 from '../../assets/pexels-rajitha-fernando-525223-1259789.webp';
+import img15 from '../../assets/pexels-roshan-36537671.webp';
+import img16 from '../../assets/pexels-ruwan-lakmal-326724272-33404365.webp';
+import img17 from '../../assets/pexels-samiulhaquebhuyan-30563640.webp';
+import img18 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp';
+import img19 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873300.webp';
+import img20 from '../../assets/rome_city.webp';
+
 const testimonialsData = [
   { 
     id: 1, 
     avatar: "https://i.pravatar.cc/150?img=1",
     name: "Sarah Jenkins",
     role: "Travel Blogger",
-    text: "The mountain trek was absolutely breathtaking. The guides were incredibly knowledgeable and the views were out of this world.",
-    collage: [
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80"
-    ]
+    text: "The Ella mountain trek was absolutely breathtaking. The guides were incredibly knowledgeable about the tea estates and the views were out of this world.",
+    collage: [img1, img2, img3, img4]
   },
   { 
     id: 2, 
     avatar: "https://i.pravatar.cc/150?img=11",
     name: "Michael Chen",
-    role: "CEO @ Framify",
-    text: "A truly unforgettable experience. Everything was perfectly organized from start to finish. I can't wait for my next adventure!",
-    collage: [
-      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=600&q=80"
-    ]
+    role: "Digital Nomad",
+    text: "A truly unforgettable experience in Mirissa. Everything was perfectly organized from start to finish. I can't wait for my next surfing adventure in Sri Lanka!",
+    collage: [img5, img6, img7, img8]
   },
   { 
     id: 3, 
     avatar: "https://i.pravatar.cc/150?img=5",
     name: "Emma Watson",
     role: "Wildlife Photographer",
-    text: "Experience stunning beaches, unique wildlife, and vibrant cities through the eyes of our happy travelers. Their stories are our greatest achievement.",
-    collage: [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1558979158-65a1eaa08691?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=600&q=80"
-    ]
+    text: "Witnessing the elephants at Yala was a dream come true. The local guides knew exactly where to find the leopards and the biodiversity is stunning.",
+    collage: [img9, img10, img11, img12]
   },
   { 
     id: 4, 
     avatar: "https://i.pravatar.cc/150?img=8",
     name: "David Miller",
     role: "Culture Enthusiast",
-    text: "The cultural immersion was deep and authentic. We got to see the real heart of the country, not just the tourist spots.",
-    collage: [
-      "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=600&q=80"
-    ]
+    text: "The cultural immersion in Kandy was deep and authentic. We got to see the real heart of the country, tasting traditional Sri Lankan curries and experiencing the Temple of the Tooth.",
+    collage: [img13, img14, img15, img16]
   },
   { 
     id: 5, 
     avatar: "https://i.pravatar.cc/150?img=9",
     name: "Olivia Rodrigo",
     role: "Luxury Traveler",
-    text: "From the luxurious accommodations to the thrilling safaris, every moment was picture perfect. Highly recommended agency.",
-    collage: [
-      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=600&q=80"
-    ]
+    text: "From the luxurious boutique hotels in Galle Fort to the scenic train rides, every moment in Sri Lanka was picture perfect. Highly recommended agency.",
+    collage: [img17, img18, img19, img20]
   }
 ];
 

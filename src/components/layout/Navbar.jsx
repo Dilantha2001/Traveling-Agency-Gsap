@@ -31,9 +31,7 @@ const Navbar = () => {
           <li><a href="#">Contact Us</a></li>
         </ul>
 
-        <div className="navbar-action">
-          <button className="btn-primary">Get Template</button>
-        </div>
+        
       </div>
     </nav>
   );

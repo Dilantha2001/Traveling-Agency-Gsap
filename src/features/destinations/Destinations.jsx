@@ -6,91 +6,101 @@ import './Destinations.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import img1 from '../../assets/maldives_beach.webp'; // Mirissa
+import img2 from '../../assets/niwantha_niluka-mountain-7897203_1920.webp'; // Ella
+import img3 from '../../assets/coast.webp'; // Galle Fort
+import img4 from '../../assets/peographic-temple-3649292_1920.webp'; // Kandy
+import img5 from '../../assets/safari_savanna.webp'; // Yala
+import img6 from '../../assets/amanjahemal-trains-5227361_1920.webp'; // Nuwara Eliya
+import img7 from '../../assets/oleksandrpidvalnyi-ocean-7029117_1920.webp'; // Trinco
+import img8 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp'; // Sigiriya
+import img9 from '../../assets/nharshanahw-elephant-3903267_1920.webp'; // Minneriya
+
 const packagesData = [
   {
     id: 1,
-    country: 'Australia',
-    title: 'Coastal Wonders',
-    description: 'Experience stunning beaches, unique wildlife, and vibrant cities.',
-    price: '999',
+    country: 'Sri Lanka',
+    title: 'Mirissa Beach Escape',
+    description: 'Experience stunning golden beaches, whale watching, and vibrant nightlife.',
+    price: '299',
     category: 'Beach',
-    image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=800&q=80'
+    image: img1
   },
   {
     id: 2,
-    country: 'Switzerland',
-    title: 'Alpine Escape',
-    description: 'Experience breathtaking mountain views, crystal-clear lakes, and charming villages.',
-    price: '599',
+    country: 'Sri Lanka',
+    title: 'Ella Mountain Adventure',
+    description: 'Experience breathtaking mountain views, crystal-clear waterfalls, and tea estates.',
+    price: '199',
     category: 'Adventure',
-    image: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80'
+    image: img2
   },
   {
     id: 3,
-    country: 'Italy',
-    title: 'Historic Rome',
-    description: 'Savor exquisite cuisine, explore historic landmarks, and enjoy beautiful landscapes.',
-    price: '799',
+    country: 'Sri Lanka',
+    title: 'Galle Fort Heritage',
+    description: 'Savor exquisite cuisine, explore colonial landmarks, and enjoy beautiful sunsets.',
+    price: '399',
     category: 'Luxury',
-    image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80'
+    image: img3
   },
   {
     id: 4,
-    country: 'Japan',
-    title: 'Cultural Odyssey',
-    description: 'Discover ancient temples, bustling cities, and serene gardens.',
-    price: '1899',
-    category: 'Luxury',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80'
+    country: 'Sri Lanka',
+    title: 'Kandy Cultural Tour',
+    description: 'Discover ancient temples, traditional dances, and the sacred Temple of the Tooth.',
+    price: '249',
+    category: 'Cultural',
+    image: img4
   },
   {
     id: 5,
-    country: 'Brazil',
-    title: 'Amazon Adventure',
-    description: 'Journey deep into the rainforest and explore exotic wildlife.',
-    price: '699',
-    category: 'Adventure',
-    image: 'https://images.unsplash.com/photo-1518182170546-076616fd4625?auto=format&fit=crop&w=800&q=80'
+    country: 'Sri Lanka',
+    title: 'Yala Wildlife Safari',
+    description: 'Witness leopards and elephants in their natural habitat on thrilling game drives.',
+    price: '349',
+    category: 'Wildlife',
+    image: img5
   },
   {
     id: 6,
-    country: 'South Africa',
-    title: 'Wildlife Safari',
-    description: 'Witness the big five in their natural habitat on thrilling game drives.',
-    price: '899',
-    category: 'Wildlife',
-    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80'
+    country: 'Sri Lanka',
+    title: 'Nuwara Eliya Road Trip',
+    description: 'Hit the winding roads and experience the ultimate Little England getaway.',
+    price: '289',
+    category: 'Road Trip',
+    image: img6
   },
   {
     id: 7,
-    country: 'USA',
-    title: 'Route 66 Classic',
-    description: 'Hit the open road and experience the ultimate American road trip.',
-    price: '1299',
-    category: 'Road Trip',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80'
+    country: 'Sri Lanka',
+    title: 'Trinco Tropical Paradise',
+    description: 'Relax on pristine white sands and swim in crystal clear eastern waters.',
+    price: '499',
+    category: 'Beach',
+    image: img7
   },
   {
     id: 8,
-    country: 'Maldives',
-    title: 'Tropical Paradise',
-    description: 'Relax in overwater bungalows and swim in crystal clear waters.',
-    price: '2499',
-    category: 'Beach',
-    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80'
+    country: 'Sri Lanka',
+    title: 'Sigiriya Rock Fortress',
+    description: 'Climb the ancient rock, explore ruins, and experience rich history.',
+    price: '150',
+    category: 'Cultural',
+    image: img8
   },
   {
     id: 9,
-    country: 'New Zealand',
-    title: 'Kiwi Explorer',
-    description: 'Hike glaciers, explore fjords, and experience adrenaline activities.',
-    price: '1499',
-    category: 'Adventure',
-    image: 'https://images.unsplash.com/photo-1469521669194-babbdf9aa95a?auto=format&fit=crop&w=800&q=80'
+    country: 'Sri Lanka',
+    title: 'Minneriya Elephant Gathering',
+    description: 'Journey deep into the park and explore the largest gathering of wild elephants.',
+    price: '299',
+    category: 'Wildlife',
+    image: img9
   }
 ];
 
-const filters = ['All Options', 'Adventure', 'Beach', 'Luxury', 'Road Trip', 'Wildlife'];
+const filters = ['All Options', 'Adventure', 'Beach', 'Luxury', 'Cultural', 'Wildlife', 'Road Trip'];
 
 const Destinations = () => {
   const [activeFilter, setActiveFilter] = useState('All Options');

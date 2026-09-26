@@ -6,21 +6,25 @@ import './Team.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import img1 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp';
+import img2 from '../../assets/peographic-temple-3649292_1920.webp';
+import img3 from '../../assets/amanjahemal-trains-5227361_1920.webp';
+
 const teamMembers = [
   {
     name: "Emma Brooks",
     role: "Founder & CEO",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
+    image: img1
   },
   {
     name: "Sophia Bennett",
     role: "Head of Operations",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80"
+    image: img2
   },
   {
     name: "Daniel Carter",
     role: "Lead Guide",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+    image: img3
   }
 ];
 

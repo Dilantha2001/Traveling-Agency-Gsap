@@ -6,6 +6,12 @@ import './OurStory.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+import img1 from '../../assets/lotous.mp4';
+import img2 from '../../assets/pexels-samiulhaquebhuyan-30563640.webp';
+import img3 from '../../assets/pexels-harsha-bokalawala-706195915-36002646.webp';
+import img4 from '../../assets/pexels-ruwan-lakmal-326724272-33404365.webp';
+import img5 from '../../assets/pexels-gihans-11309702.webp';
+
 const OurStory = () => {
   const containerRef = useRef(null);
 
@@ -62,10 +68,13 @@ const OurStory = () => {
           
           {/* Left Card: Video & Marquee */}
           <div className="story-card video-story-card">
-            <img 
-              src="https://images.unsplash.com/photo-1506905925232-4684a9bc060f?auto=format&fit=crop&w=800&q=80" 
-              alt="Mountain View" 
+            <video 
+              src={img1} 
               className="story-video-bg"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
             <button className="story-pause-btn">❚❚</button>
             <div className="story-marquee-container">
@@ -79,16 +88,16 @@ const OurStory = () => {
           {/* Right Card: Image & Yellow Box */}
           <div className="story-card image-story-card">
             <img 
-              src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&w=800&q=80" 
+              src={img2} 
               alt="Mountain Biking" 
               className="story-biking-bg"
             />
             <div className="story-floating-box">
               <div className="story-floating-header">
                 <div className="story-avatars">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=50&h=50&q=80" alt="Avatar" />
-                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=50&h=50&q=80" alt="Avatar" />
-                  <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=50&h=50&q=80" alt="Avatar" />
+                  <img src={img3} alt="Avatar" />
+                  <img src={img4} alt="Avatar" />
+                  <img src={img5} alt="Avatar" />
                 </div>
                 <span className="story-dest-count">150+ DESTINATIONS</span>
               </div>

@@ -30,7 +30,7 @@ const Footer = () => {
       {/* Wavy SVG divider at the top */}
       <div className="footer-wave">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
-          <path fill="#fce762" d="M0,80 Q72,160 144,80 T288,80 T432,80 T576,80 T720,80 T864,80 T1008,80 T1152,80 T1296,80 T1440,80 L1440,160 L0,160 Z"></path>
+          <path fill="#1591DC" d="M0,80 Q72,160 144,80 T288,80 T432,80 T576,80 T720,80 T864,80 T1008,80 T1152,80 T1296,80 T1440,80 L1440,160 L0,160 Z"></path>
         </svg>
       </div>
 
@@ -90,23 +90,6 @@ const Footer = () => {
             <a href="#" className="social-box"><FaInstagram /></a>
             <a href="#" className="social-box"><FaYoutube /></a>
             <a href="#" className="social-box"><FaFacebookF /></a>
-          </div>
-          
-          <div className="footer-badges">
-            <div className="badge">
-              <div className="badge-icon green-icon">⚡</div>
-              <div className="badge-text">
-                <span>Made by</span>
-                <strong>FLOWCUB</strong>
-              </div>
-            </div>
-            <div className="badge">
-              <div className="badge-icon blue-icon">W</div>
-              <div className="badge-text">
-                <span>Powered by</span>
-                <strong>WEBFLOW</strong>
-              </div>
-            </div>
           </div>
         </div>
 

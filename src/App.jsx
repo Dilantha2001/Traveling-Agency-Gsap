@@ -18,8 +18,8 @@ import Footer from './components/layout/Footer';
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.05, // Lower lerp makes the scroll feel much heavier/smoother
-      wheelMultiplier: 0.8, // Reduces the scroll distance per wheel click
+      lerp: 0.02, // Lower lerp makes the scroll feel much heavier/smoother (decreased from 0.05)
+      wheelMultiplier: 0.5, // Reduces the scroll distance per wheel click (decreased from 0.8)
       smoothWheel: true,
     });
 
