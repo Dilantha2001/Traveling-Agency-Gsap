@@ -13,17 +13,17 @@ const About = () => {
   const containerRef = useRef();
 
   useGSAP(() => {
-    // Text color scrub
+    // Text opacity scrub (Hardware accelerated compared to color)
     gsap.fromTo(".anim-word", 
-      { color: "#d1d5db" }, // light gray
+      { opacity: 0.2 }, // start semi-transparent
       {
-        color: "#333333", // dark gray theme color
+        opacity: 1, // end fully visible
         stagger: 0.1,
         scrollTrigger: {
           trigger: ".about-title",
           start: "top 80%",
           end: "bottom 30%",
-          scrub: 1
+          scrub: true
         }
       }
     );
@@ -32,27 +32,15 @@ const About = () => {
     const imageWrappers = gsap.utils.toArray('.anim-img-wrapper');
     
     imageWrappers.forEach((wrapper) => {
-      const img = wrapper.querySelector('.anim-img');
-      
-      gsap.set(wrapper, { width: 0 });
-
       ScrollTrigger.create({
         trigger: wrapper.parentElement,
         start: "top 85%",
         end: "bottom 20%",
         onEnter: () => {
-          gsap.to(wrapper, {
-            width: "140px",
-            duration: 0.5,
-            ease: "power2.out"
-          });
+          wrapper.classList.add('expanded');
         },
         onLeaveBack: () => {
-          gsap.to(wrapper, {
-            width: 0,
-            duration: 0.5,
-            ease: "power2.inOut"
-          });
+          wrapper.classList.remove('expanded');
         }
       });
     });
@@ -66,14 +54,18 @@ const About = () => {
       
       gsap.to(zero, {
         val: target,
-        duration: 1, // Sped up the animation
-        ease: "power3.out", // Smoother easing
+        duration: 3, // 3000ms duration matching user request
+        ease: "none", // linear easing matching user request
         scrollTrigger: {
           trigger: ".about-stats-container",
-          start: "top 90%", // Trigger when the stats container is 90% in view
+          start: "top 90%",
+          toggleActions: "restart none none reset" // Restarts the animation every time you scroll down to it
         },
         onUpdate: function() {
-          stat.innerHTML = isFloat ? zero.val.toFixed(1) : Math.round(zero.val);
+          stat.textContent = isFloat ? zero.val.toFixed(1) : Math.floor(zero.val);
+        },
+        onComplete: function() {
+          stat.textContent = target; // Ensure exact final value
         }
       });
     });
@@ -117,10 +109,10 @@ const About = () => {
       </div>
 
       <div className="about-cards-container">
-        <div className="about-card image-card">
+        <div className="about-card image-card reveal-scale-up">
           <img src={mountainImage} alt="Mountain landscape" />
         </div>
-        <div className="about-card image-card">
+        <div className="about-card image-card reveal-scale-up">
           <img src={coastImage} alt="Rocky coast" />
           <div className="save-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
@@ -129,7 +121,7 @@ const About = () => {
             Save
           </div>
         </div>
-        <div className="about-card text-card">
+        <div className="about-card text-card reveal-scale-up">
           <div className="text-card-content">
             <h3>EXPLORE.</h3>
             <h4>The world is waiting.</h4>
@@ -142,7 +134,7 @@ const About = () => {
       </div>
 
       <div className="about-stats-container">
-        <div className="stat-card">
+        <div className="stat-card reveal-scale-up">
           <h3><span className="stat-number" data-target="50">0</span>+</h3>
           <p>
             <span className="stat-icon">
@@ -151,7 +143,7 @@ const About = () => {
             Destinations
           </p>
         </div>
-        <div className="stat-card">
+        <div className="stat-card reveal-scale-up">
           <h3><span className="stat-number" data-target="12">0</span>K+</h3>
           <p>
             <span className="stat-icon">
@@ -160,7 +152,7 @@ const About = () => {
             Happy Travelers
           </p>
         </div>
-        <div className="stat-card">
+        <div className="stat-card reveal-scale-up">
           <h3><span className="stat-number" data-target="4.9">0.0</span></h3>
           <p>
             <span className="stat-icon">
@@ -169,7 +161,7 @@ const About = () => {
             Traveler Rating
           </p>
         </div>
-        <div className="stat-card">
+        <div className="stat-card reveal-scale-up">
           <h3><span className="stat-number" data-target="10">0</span>+</h3>
           <p>
             <span className="stat-icon">

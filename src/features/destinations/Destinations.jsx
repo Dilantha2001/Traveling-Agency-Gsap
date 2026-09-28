@@ -111,19 +111,24 @@ const Destinations = () => {
     : packagesData.filter(pkg => pkg.category === activeFilter);
 
   useGSAP(() => {
-    // Initial entrance animation
-    gsap.from(".dest-header > *", {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 75%",
-      },
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out"
+    gsap.utils.toArray('.dest-card').forEach((card, i) => {
+      gsap.fromTo(card, 
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          delay: (i % 3) * 0.15, // Staggers 3 at a time (columns 1, 2, 3)
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
     });
-  }, { scope: containerRef });
+  }, { scope: containerRef, dependencies: [activeFilter] });
 
   return (
     <section className="destinations-section" ref={containerRef}>
@@ -150,7 +155,7 @@ const Destinations = () => {
         {/* Grid */}
         <div className="dest-grid">
           {filteredPackages.map(pkg => (
-            <div className="dest-card" key={pkg.id}>
+            <div className="dest-card reveal-scale-up" key={pkg.id}>
               <div className="dest-card-top">
                 <span className="dest-country">{pkg.country}</span>
                 <div className="dest-title-row">

@@ -27,18 +27,7 @@ const VideoSection = () => {
       }
     );
 
-    // Fade in text
-    gsap.from(".video-text-content > *", {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 70%",
-      },
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out"
-    });
+
   }, { scope: containerRef });
 
   return (

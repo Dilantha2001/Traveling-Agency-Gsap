@@ -7,24 +7,12 @@ import './Contact.css';
 gsap.registerPlugin(ScrollTrigger);
 
 import img1 from '../../assets/pexels-dulshan-33080670.webp';
-import img2 from '../../assets/pexels-rajitha-fernando-525223-1259789.webp';
+import img2 from '../../assets/ayubowan.webp';
 
 const Contact = () => {
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    // Fade in and slide up the main contact wrapper
-    gsap.from(".contact-wrapper", {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 75%",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out"
-    });
-  }, { scope: containerRef });
+
 
   return (
     <section className="contact-section" ref={containerRef}>
@@ -39,7 +27,7 @@ const Contact = () => {
       </div>
 
       <div className="contact-container">
-        <div className="contact-wrapper">
+        <div className="contact-wrapper reveal-scale-up">
           
           {/* Left Side: Image */}
           <div className="contact-image-side">

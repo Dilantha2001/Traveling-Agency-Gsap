@@ -1,17 +1,41 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaMountain } from 'react-icons/fa';
 import './Navbar.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const navRef = useRef(null);
 
   useEffect(() => {
+    // Initial fade in
     gsap.fromTo(
       navRef.current,
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.2 }
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: 'power3.out', delay: 0.2 }
     );
+
+    // Scroll behavior: hide on scroll down, show on scroll up
+    const showAnim = gsap.from(navRef.current, {
+      yPercent: -100,
+      paused: true,
+      duration: 0.3,
+      ease: "power2.out"
+    }).progress(1);
+
+    ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: (self) => {
+        if (self.direction === -1) {
+          showAnim.play();
+        } else if (self.direction === 1 && self.scroll() > 50) {
+          showAnim.reverse();
+        }
+      }
+    });
   }, []);
 
   return (
@@ -19,7 +43,7 @@ const Navbar = () => {
       <div className="navbar-container container">
         <div className="navbar-logo">
           <FaMountain className="logo-icon" />
-          <span>Nevio</span>
+          <span>Pirl</span>
         </div>
         
         <ul className="navbar-links">

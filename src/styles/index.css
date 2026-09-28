@@ -21,7 +21,7 @@ body {
   font-family: var(--font-primary);
   background-color: var(--bg-color);
   color: var(--text-primary);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {
@@ -82,3 +82,4 @@ button {
 .btn-accent:hover {
   background-color: #e3bc48;
 }
+

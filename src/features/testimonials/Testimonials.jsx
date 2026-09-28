@@ -77,38 +77,7 @@ const Testimonials = () => {
   const activeTestimonial = testimonialsData[activeIndex];
 
   useGSAP(() => {
-    // 1. ScrollTrigger Animation for the text and fan cards
-    gsap.set(".scatter-card", { 
-      transformOrigin: "center center",
-      opacity: 0,
-      scale: 0.8
-    });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 60%",
-        end: "bottom 80%",
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    tl.from(".feedback-text-content", {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out"
-    });
-
-    tl.to(".scatter-card", {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: "back.out(1.2)"
-    }, "-=0.4");
-
-    // 2. Continuous Orbit Animation for the avatars
+    // Continuous Orbit Animation for the avatars
     let turn = 30;
     
     // Setup initial positions

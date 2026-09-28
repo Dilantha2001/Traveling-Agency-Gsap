@@ -10,28 +10,20 @@ gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {
   const footerRef = useRef(null);
 
-  useGSAP(() => {
-    // Reveal animation for huge text
-    gsap.from(".footer-huge-text", {
-      scrollTrigger: {
-        trigger: footerRef.current,
-        start: "top 80%",
-        end: "bottom bottom",
-        scrub: 1
-      },
-      y: 100,
-      opacity: 0,
-      ease: "power2.out"
-    });
-  }, { scope: footerRef });
+
 
   return (
     <footer className="footer-section" ref={footerRef}>
       {/* Wavy SVG divider at the top */}
       <div className="footer-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
-          <path fill="#1591DC" d="M0,80 Q72,160 144,80 T288,80 T432,80 T576,80 T720,80 T864,80 T1008,80 T1152,80 T1296,80 T1440,80 L1440,160 L0,160 Z"></path>
-        </svg>
+        <div className="wave-track">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
+            <path fill="#1591DC" d="M0,80 Q72,160 144,80 T288,80 T432,80 T576,80 T720,80 T864,80 T1008,80 T1152,80 T1296,80 T1440,80 L1440,160 L0,160 Z"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
+            <path fill="#1591DC" d="M0,80 Q72,160 144,80 T288,80 T432,80 T576,80 T720,80 T864,80 T1008,80 T1152,80 T1296,80 T1440,80 L1440,160 L0,160 Z"></path>
+          </svg>
+        </div>
       </div>
 
       <div className="footer-content">
@@ -39,7 +31,7 @@ const Footer = () => {
           {/* Brand Info */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <span className="logo-icon">✈</span> Nevio
+              <span className="logo-icon">✈</span> Pirl
             </div>
             <h3 className="footer-slogan">Journeys for Every Explorer</h3>
             <p className="footer-desc">
@@ -95,8 +87,8 @@ const Footer = () => {
 
         {/* Bottom Footer: Huge Text & Copyright */}
         <div className="footer-bottom">
-          <h1 className="footer-huge-text">Nevio</h1>
-          <p className="footer-copyright">© 2026 Nevio. All rights reserved.</p>
+          <h1 className="footer-huge-text">Pirl</h1>
+          <p className="footer-copyright">© 2026 Pirl. All rights reserved.</p>
         </div>
       </div>
     </footer>

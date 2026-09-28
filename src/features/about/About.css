@@ -1,4 +1,6 @@
 .about-section {
+  position: relative;
+  z-index: 10;
   padding: 8rem 5%;
   background-color: #ffffff;
   color: #1a1a1a;
@@ -52,6 +54,12 @@
   height: 50px;
   border-radius: 30px;
   vertical-align: middle;
+  will-change: width;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Ultra smooth CSS easing */
+}
+
+.anim-img-wrapper.expanded {
+  width: 140px;
 }
 
 .anim-img {
@@ -62,6 +70,7 @@
   height: 100%;
   object-fit: cover;
   transform: translateX(-50%);
+  will-change: transform;
 }
 
 .about-cards-container {
@@ -85,6 +94,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .image-card:hover img {
@@ -166,6 +176,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* PERFORMANCE FIX: Prevents text updates from triggering full page layout recalculation */
+  contain: layout paint; 
 }
 
 .stat-card h3 {
@@ -173,6 +185,15 @@
   font-weight: 300;
   color: #222;
   margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.stat-number {
+  display: inline-block;
+  min-width: 2.5ch; /* Enough space for 2 digits or 4.9 */
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-card p {
@@ -180,12 +201,13 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
-  color: #666;
+  color: #d1a80e; /* Darker yellow for readability */
   margin: 0;
+  font-weight: 500;
 }
 
 .stat-icon {
-  color: #888;
+  color: #d1a80e;
   display: flex;
   align-items: center;
 }

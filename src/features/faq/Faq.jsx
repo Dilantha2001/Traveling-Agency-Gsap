@@ -33,33 +33,7 @@ const Faq = () => {
   const [openIndex, setOpenIndex] = useState(1); // Second item open by default
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    // Set initial state
-    gsap.set([".faq-header-content > *", ".faq-item"], { opacity: 0, y: 30 });
 
-    ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: "top 75%",
-      onEnter: () => {
-        gsap.to(".faq-header-content > *", {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "power3.out"
-        });
-
-        gsap.to(".faq-item", {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: "power3.out",
-          delay: 0.3
-        });
-      }
-    });
-  }, { scope: containerRef });
 
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);

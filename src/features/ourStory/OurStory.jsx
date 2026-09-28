@@ -15,31 +15,25 @@ import img5 from '../../assets/pexels-gihans-11309702.webp';
 const OurStory = () => {
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    // Fade in top text
-    gsap.from(".story-header-content > *", {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 75%",
-      },
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: "power3.out"
-    });
 
-    // Reveal cards
-    gsap.from(".story-card", {
+
+  useGSAP(() => {
+    // Set initial state
+    gsap.set('.story-word', { opacity: 0.2, color: '#1a1a1a' });
+    
+    // Animate through keyframes
+    gsap.to('.story-word', {
+      keyframes: [
+        { opacity: 1, color: '#007bff', duration: 1 }, // Highlight blue
+        { color: '#1a1a1a', duration: 1 }              // Settle black
+      ],
+      stagger: 0.1,
       scrollTrigger: {
-        trigger: ".story-cards-container",
-        start: "top 80%",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power3.out"
+        trigger: '.story-title',
+        start: 'top 85%',
+        end: 'bottom 40%',
+        scrub: 1
+      }
     });
   }, { scope: containerRef });
 
@@ -52,7 +46,11 @@ const OurStory = () => {
           <div className="story-header-content">
             <span className="story-tag">[OUR STORY]</span>
             <h2 className="story-title">
-              Nevio was founded on a passion for exploration, creating meaningful travel experiences through carefully curated journeys and authentic local connections.
+              {"Pirl was founded on a passion for exploration, creating meaningful travel experiences through carefully curated journeys and authentic local connections.".split(' ').map((word, index) => (
+                <span key={index} className="story-word" style={{ display: 'inline-block', marginRight: '0.25em' }}>
+                  {word}
+                </span>
+              ))}
             </h2>
           </div>
           <div className="story-header-btn">
@@ -67,7 +65,7 @@ const OurStory = () => {
         <div className="story-cards-container">
           
           {/* Left Card: Video & Marquee */}
-          <div className="story-card video-story-card">
+          <div className="story-card video-story-card reveal-scale-up">
             <video 
               src={img1} 
               className="story-video-bg"
@@ -76,17 +74,16 @@ const OurStory = () => {
               loop
               playsInline
             />
-            <button className="story-pause-btn">❚❚</button>
             <div className="story-marquee-container">
               <div className="story-marquee">
-                <span>Japan ✦ Costa Rica ✦ Santorini ✦ Dolomites ✦ Dolomites, Italy ✦ Bali, Indonesia ✦ Kyoto, Japan ✦</span>
-                <span>Japan ✦ Costa Rica ✦ Santorini ✦ Dolomites ✦ Dolomites, Italy ✦ Bali, Indonesia ✦ Kyoto, Japan ✦</span>
+                <span>Sigiriya ✦ Ella ✦ Mirissa ✦ Galle Fort ✦ Yala National Park ✦ Kandy ✦ Nuwara Eliya ✦ </span>
+                <span>Sigiriya ✦ Ella ✦ Mirissa ✦ Galle Fort ✦ Yala National Park ✦ Kandy ✦ Nuwara Eliya ✦ </span>
               </div>
             </div>
           </div>
 
           {/* Right Card: Image & Yellow Box */}
-          <div className="story-card image-story-card">
+          <div className="story-card image-story-card reveal-scale-up">
             <img 
               src={img2} 
               alt="Mountain Biking" 

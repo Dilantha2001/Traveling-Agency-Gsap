@@ -2,7 +2,8 @@
   width: 100%;
   padding: 0 5%;
   background-color: #fff;
-  margin-bottom: 50px; /* Space before footer wave */
+  margin-bottom: 0; 
+  padding-bottom: 160px; /* Extend white bg behind footer wave */
   position: relative;
   z-index: 1;
 }

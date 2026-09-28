@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 import Navbar from './components/layout/Navbar';
 import Hero from './features/hero/Hero';
 import About from './features/about/About';
@@ -18,22 +23,25 @@ import Footer from './components/layout/Footer';
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.02, // Lower lerp makes the scroll feel much heavier/smoother (decreased from 0.05)
-      wheelMultiplier: 0.5, // Reduces the scroll distance per wheel click (decreased from 0.8)
+      lerp: 0.03, // Extremely low value for a very heavy, smooth scroll
       smoothWheel: true,
+      wheelMultiplier: 0.6, // Further reduced wheel speed to make it feel heavier
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    lenis.on('scroll', ScrollTrigger.update);
 
-    requestAnimationFrame(raf);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();
     };
   }, []);
+
+
 
   return (
     <>
