@@ -22,6 +22,8 @@ import img18 from '../../assets/safari_savanna.webp';
 import img19 from '../../assets/maldives_beach.webp';
 import img20 from '../../assets/coast.webp';
 
+import img21 from '../../assets/pexels-charithk-4382096.webp';
+
 const panelsData = [
   {
     id: 1,
@@ -41,7 +43,7 @@ const panelsData = [
   {
     id: 4,
     title: 'Wildlife Safari',
-    images: [img17, img18, img9, img12]
+    images: [img17, img18, img21, img12]
   },
   {
     id: 5,

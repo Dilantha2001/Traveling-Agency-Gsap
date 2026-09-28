@@ -16,7 +16,8 @@ const Contact = () => {
 
   return (
     <section className="contact-section" ref={containerRef}>
-      {/* Background Image */}
+      {/* Background Image - Removed as requested */}
+      {/* 
       <div className="contact-bg">
         <img 
           src={img1} 
@@ -25,6 +26,7 @@ const Contact = () => {
         />
         <div className="contact-bg-overlay"></div>
       </div>
+      */}
 
       <div className="contact-container">
         <div className="contact-wrapper reveal-scale-up">

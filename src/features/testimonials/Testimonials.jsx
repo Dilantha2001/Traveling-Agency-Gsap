@@ -2,70 +2,71 @@ import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { FaQuoteLeft, FaStar } from 'react-icons/fa';
 import './Testimonials.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-import img1 from '../../assets/coast.webp';
-import img2 from '../../assets/maldives_beach.webp';
-import img3 from '../../assets/mountain.webp';
-import img4 from '../../assets/nharshanahw-elephant-3903267_1920.webp';
-import img5 from '../../assets/niwantha_niluka-mountain-7897203_1920.webp';
-import img6 from '../../assets/oleksandrpidvalnyi-ocean-7029117_1920.webp';
-import img7 from '../../assets/peographic-temple-3649292_1920.webp';
-import img8 from '../../assets/pexels-andromeda99-17801597.webp';
-import img9 from '../../assets/pexels-charithk-6337422.webp';
-import img10 from '../../assets/pexels-dulshan-33080670.webp';
-import img11 from '../../assets/pexels-gihans-11309702.webp';
-import img12 from '../../assets/pexels-harsha-bokalawala-706195915-36002646.webp';
-import img13 from '../../assets/pexels-pexels-user-178764159-11166072.webp';
-import img14 from '../../assets/pexels-rajitha-fernando-525223-1259789.webp';
-import img15 from '../../assets/pexels-roshan-36537671.webp';
-import img16 from '../../assets/pexels-ruwan-lakmal-326724272-33404365.webp';
-import img17 from '../../assets/pexels-samiulhaquebhuyan-30563640.webp';
-import img18 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp';
-import img19 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873300.webp';
-import img20 from '../../assets/rome_city.webp';
+import img1 from '../../assets/tour (1).jfif';
+import img2 from '../../assets/tour (2).jfif';
+import img3 from '../../assets/tour (3).jfif';
+import img4 from '../../assets/tour (4).jfif';
+import img5 from '../../assets/tour (5).jfif';
+import img6 from '../../assets/tour (6).jfif';
+import img7 from '../../assets/tour (7).jfif';
+import img8 from '../../assets/tour (8).jfif';
+import img9 from '../../assets/temp (1).jfif';
+import img10 from '../../assets/temp (2).jfif';
+import img11 from '../../assets/temp (3).jfif';
+import img12 from '../../assets/temp (4).jfif';
+import img13 from '../../assets/temp (5).jfif';
+import img14 from '../../assets/temp (6).jfif';
+import img15 from '../../assets/temp (7).jfif';
+import img16 from '../../assets/temp (8).jfif';
+import img17 from '../../assets/temp (9).jfif';
+import img18 from '../../assets/temp (10).jfif';
+import img19 from '../../assets/temp (11).jfif';
+import img20 from '../../assets/temp (12).jfif';
 
 const testimonialsData = [
   { 
     id: 1, 
-    avatar: "https://i.pravatar.cc/150?img=1",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop",
     name: "Sarah Jenkins",
     role: "Travel Blogger",
-    text: "The Ella mountain trek was absolutely breathtaking. The guides were incredibly knowledgeable about the tea estates and the views were out of this world.",
+    text: "Scaling the peaks of Ella and waking up to the mist rolling over the tea plantations was a surreal experience. Pirl's guides didn't just show us Sri Lanka; they made us feel like family. The local tea tasting was a phenomenal touch!",
     collage: [img1, img2, img3, img4]
   },
   { 
     id: 2, 
-    avatar: "https://i.pravatar.cc/150?img=11",
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop",
     name: "Michael Chen",
     role: "Digital Nomad",
-    text: "A truly unforgettable experience in Mirissa. Everything was perfectly organized from start to finish. I can't wait for my next surfing adventure in Sri Lanka!",
+    text: "From the pristine shores of Mirissa to the vibrant streets of Colombo, our itinerary was flawlessly curated. Catching the sunset while surfing on the southern coast was a core memory. Absolute perfection from start to finish.",
     collage: [img5, img6, img7, img8]
   },
   { 
     id: 3, 
-    avatar: "https://i.pravatar.cc/150?img=5",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
     name: "Emma Watson",
     role: "Wildlife Photographer",
-    text: "Witnessing the elephants at Yala was a dream come true. The local guides knew exactly where to find the leopards and the biodiversity is stunning.",
+    text: "Our safari at Yala National Park exceeded all expectations! We witnessed leopards in their natural habitat, and the eco-lodge arranged by the agency was breathtaking. Truly an unmatched wildlife adventure in the Pearl of the Indian Ocean.",
     collage: [img9, img10, img11, img12]
   },
   { 
     id: 4, 
-    avatar: "https://i.pravatar.cc/150?img=8",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop",
     name: "David Miller",
     role: "Culture Enthusiast",
-    text: "The cultural immersion in Kandy was deep and authentic. We got to see the real heart of the country, tasting traditional Sri Lankan curries and experiencing the Temple of the Tooth.",
+    text: "The cultural immersion in Kandy and Sigiriya was deeply moving. Climbing the Lion Rock at sunrise and savoring authentic village curries made this journey unforgettable. Their local expertise is truly unmatched.",
     collage: [img13, img14, img15, img16]
   },
   { 
     id: 5, 
-    avatar: "https://i.pravatar.cc/150?img=9",
+    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&h=150&fit=crop",
     name: "Olivia Rodrigo",
     role: "Luxury Traveler",
-    text: "From the luxurious boutique hotels in Galle Fort to the scenic train rides, every moment in Sri Lanka was picture perfect. Highly recommended agency.",
+    text: "Luxury travel redefined. The boutique villas in Galle Fort combined rich colonial history with modern elegance. The coastal train ride was straight out of a movie. Pirl crafted a masterpiece of a vacation for us.",
     collage: [img17, img18, img19, img20]
   }
 ];
@@ -81,7 +82,7 @@ const Testimonials = () => {
     let turn = 30;
     
     // Setup initial positions
-    gsap.set(".testi-box", { transformOrigin: "-180px center" }); // Radius adjusted for the new layout
+    gsap.set(".testi-rotator", { transformOrigin: "-190px 35px" }); // Mathematically perfect radius for 450px circle
     
     gsap.set("#t-box1", { rotation: -(2 * turn) });
     gsap.set("#t-box2", { rotation: -turn });
@@ -114,7 +115,7 @@ const Testimonials = () => {
         ease: "power2.inOut",
       });
 
-      gsap.to(".testi-box", {
+      gsap.to(".testi-rotator", {
         rotation: "+=" + turn,
         duration: 1.6,
         ease: "power2.inOut",
@@ -138,6 +139,14 @@ const Testimonials = () => {
 
   return (
     <section className="feedback-section" ref={containerRef}>
+      
+      {/* Testimonials Header */}
+      <div className="feedback-main-header reveal-scale-up">
+        <span className="feedback-tag">[TESTIMONIALS]</span>
+        <h2 className="feedback-title">Stories from our Explorers</h2>
+        <p className="feedback-desc">Discover the unforgettable experiences and memories created on our personalized journeys across Sri Lanka.</p>
+      </div>
+
       {/* SPINNER ON LEFT CORNER */}
       <div className="feedback-spinner-side">
         <div className="testi-parentCircle">
@@ -145,10 +154,14 @@ const Testimonials = () => {
           {testimonialsData.map((item, index) => (
             <div 
               key={item.id} 
-              className={`testi-box ${activeIndex === index ? 'active' : ''}`}
+              className="testi-rotator"
               id={`t-box${item.id}`}
-              style={{ backgroundImage: `url(${item.avatar})` }}
             >
+              <div 
+                className={`testi-box ${activeIndex === index ? 'active' : ''}`}
+                style={{ backgroundImage: `url(${item.avatar})` }}
+              >
+              </div>
             </div>
           ))}
         </div>
@@ -158,9 +171,16 @@ const Testimonials = () => {
         <div className="feedback-text-side">
           <div className="feedback-card dynamic-content">
             <div className="feedback-card-header">
-              <div className="feedback-logo">Logoipsum</div>
+              <div className="feedback-quote-icon">
+                <FaQuoteLeft />
+              </div>
               <div className="feedback-rating">
-                <span className="star-icon">★</span> Rated 4.9 Star on Google
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <FaStar className="star-icon" />
+                <span className="rating-text">4.9 on Google</span>
               </div>
             </div>
             

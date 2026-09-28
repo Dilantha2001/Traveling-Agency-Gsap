@@ -6,23 +6,23 @@ import './Team.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-import img1 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp';
-import img2 from '../../assets/peographic-temple-3649292_1920.webp';
-import img3 from '../../assets/amanjahemal-trains-5227361_1920.webp';
+import img1 from '../../assets/ceo (1).jpg';
+import img2 from '../../assets/ceo (2).jpg';
+import img3 from '../../assets/ceo (3).jpg';
 
 const teamMembers = [
   {
-    name: "Emma Brooks",
+    name: "Sanduni Silva",
     role: "Founder & CEO",
     image: img1
   },
   {
-    name: "Sophia Bennett",
+    name: "Kasun Perera",
     role: "Head of Operations",
     image: img2
   },
   {
-    name: "Daniel Carter",
+    name: "Nuwan Jayasooriya",
     role: "Lead Guide",
     image: img3
   }

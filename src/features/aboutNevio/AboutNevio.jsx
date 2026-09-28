@@ -17,7 +17,7 @@ import img8 from '../../assets/coast.webp';
 import img9 from '../../assets/mountain.webp';
 import img10 from '../../assets/safari_savanna.webp';
 import img11 from '../../assets/maldives_beach.webp';
-
+import img12 from '../../assets/hero.webp';
 
 const AboutNevio = () => {
   const containerRef = useRef(null);
@@ -25,54 +25,18 @@ const AboutNevio = () => {
 
 
   const galleryImages = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, 
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12
   ];
-
-  const getTapeStyle = (idx) => {
-    const corner = idx % 4; // 0: Top-Left, 1: Top-Right, 2: Bottom-Left, 3: Bottom-Right
-    const isLeft = corner === 0 || corner === 2;
-    const isTop = corner === 0 || corner === 1;
-    
-    const rotate = isLeft ? -35 + (idx % 3) * 10 : 35 - (idx % 3) * 10;
-    const left = isLeft ? 15 + (idx % 4) * 3 : 85 - (idx % 4) * 3;
-    const verticalPos = -10 + (idx % 5) * 2;
-    
-    const style = {
-      transform: `translateX(-50%) rotate(${rotate}deg)`,
-      left: `${left}%`,
-    };
-    
-    if (isTop) {
-      style.top = `${verticalPos}px`;
-    } else {
-      style.bottom = `${verticalPos}px`;
-    }
-    
-    return style;
-  };
-
-  useGSAP(() => {
-    // Set initial state
-    gsap.set('.desc-word', { opacity: 0.2, color: '#1a1a1a' });
-    
-    // Animate through keyframes
-    gsap.to('.desc-word', {
-      keyframes: [
-        { opacity: 1, color: '#007bff', duration: 1 }, // Highlight blue
-        { color: '#1a1a1a', duration: 1 }              // Settle black
-      ],
-      stagger: 0.1, // Reduced stagger so it doesn't take too long
-      scrollTrigger: {
-        trigger: '.nevio-desc',
-        start: 'top 85%',
-        end: 'bottom 40%',
-        scrub: 1
-      }
-    });
-  }, { scope: containerRef });
 
   return (
     <section className="about-nevio-section" ref={containerRef}>
+      {/* SVG Filter for torn paper edge effect */}
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <filter id="torn-edge">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
 
       <div className="about-nevio-container">
         
@@ -81,11 +45,8 @@ const AboutNevio = () => {
           <span className="nevio-tag">[ABOUT PIRL]</span>
           <h2 className="nevio-title">Crafting Meaningful<br/>Journeys Worldwide</h2>
           <p className="nevio-desc">
-            {"Pirl was founded on a passion for exploration, creating meaningful travel experiences through carefully curated journeys and authentic local connections.".split(' ').map((word, index) => (
-              <span key={index} className="desc-word" style={{ display: 'inline-block', marginRight: '0.25em' }}>
-                {word}
-              </span>
-            ))}
+            We specialize in crafting unforgettable tours and travel experiences that bring<br/>
+            people closer to the world's most inspiring destinations.
           </p>
         </div>
 
@@ -98,12 +59,8 @@ const AboutNevio = () => {
             {galleryImages.map((imgUrl, index) => (
               <div 
                 key={`m1-${index}`} 
-                className="nevio-img-wrapper"
+                className={`nevio-img-wrapper ${index % 2 === 0 ? 'stagger-up' : 'stagger-down'}`}
               >
-                <div 
-                  className="nevio-tape"
-                  style={getTapeStyle(index)}
-                />
                 <img src={imgUrl} alt={`Sri Lanka ${index}`} className="torn-image" />
               </div>
             ))}
@@ -112,12 +69,8 @@ const AboutNevio = () => {
             {galleryImages.map((imgUrl, index) => (
               <div 
                 key={`m2-${index}`} 
-                className="nevio-img-wrapper"
+                className={`nevio-img-wrapper ${index % 2 === 0 ? 'stagger-up' : 'stagger-down'}`}
               >
-                <div 
-                  className="nevio-tape"
-                  style={getTapeStyle(index + 5)}
-                />
                 <img src={imgUrl} alt={`Sri Lanka ${index}`} className="torn-image" />
               </div>
             ))}

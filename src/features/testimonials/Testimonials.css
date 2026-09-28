@@ -3,11 +3,45 @@
   min-height: 100vh;
   background-color: #fdfbf7;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 8rem 10%;
+  justify-content: flex-start;
+  padding: 8rem 10% 4rem 10%;
   overflow: hidden;
   position: relative;
+}
+
+.feedback-main-header {
+  text-align: center;
+  margin-bottom: 60px;
+  z-index: 5;
+  width: 100%;
+}
+
+.feedback-tag {
+  display: inline-block;
+  color: #c2410c; /* reddish orange */
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.feedback-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #2b2b2b;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.feedback-desc {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 /* Spinner side on the left corner */
@@ -22,33 +56,46 @@
 .testi-parentCircle {
   width: 450px;
   height: 450px;
-  border: 1px dashed #ccc;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.08); /* Sleek solid line instead of dashed */
   border-radius: 50%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.02), 0 0 40px rgba(0,0,0,0.02); /* Very subtle depth */
+}
+
+.testi-rotator {
+  width: 70px;
+  height: 70px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 189px;
+  left: 414px;
+  z-index: 5;
 }
 
 .testi-box {
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  right: -35px; /* Half of width */
-  top: 50%;
-  margin-top: -35px;
+  width: 100%;
+  height: 100%;
+  position: relative;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* Modern soft shadow */
   border: 4px solid #fff;
-  z-index: 5;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  scale: 1;
+  transform-origin: center center; /* Independent from rotator! */
+  transition: scale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  filter: grayscale(40%) opacity(0.8);
 }
 
 .testi-box.active {
-  transform: scale(1.2);
+  scale: 1.35; /* Use independent scale property to avoid GSAP transform conflict */
   border-color: #fce762;
+  box-shadow: 0 15px 35px rgba(252, 231, 98, 0.25); /* Glow matching the border */
+  filter: grayscale(0%) opacity(1);
   z-index: 10;
 }
 
@@ -61,6 +108,7 @@
   padding-left: 300px; /* Space for the spinner */
   gap: 50px;
   z-index: 5;
+  flex: 1; /* allow it to take remaining space */
 }
 
 .feedback-text-side {
@@ -70,12 +118,14 @@
 
 /* Feedback Card Styling */
 .feedback-card {
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f0f0f0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255,255,255,1);
+  border: 1px solid rgba(220, 220, 220, 0.5);
   width: 100%;
+  position: relative;
 }
 
 .feedback-card-header {
@@ -85,39 +135,43 @@
   margin-bottom: 25px;
 }
 
-.feedback-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #000;
-  font-style: italic;
+.feedback-quote-icon {
+  font-size: 2.5rem;
+  color: #1591DC;
+  opacity: 0.2;
 }
 
 .feedback-rating {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #333;
+  color: #555;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .star-icon {
-  color: #ff5e3a; /* Orange/Red star color from image */
-  font-size: 1.2rem;
+  color: #fca311; /* Golden yellow star */
+  font-size: 1.1rem;
+}
+
+.rating-text {
+  margin-left: 5px;
+  letter-spacing: -0.2px;
 }
 
 .feedback-card-body {
-  font-size: 1.3rem;
-  line-height: 1.5;
-  color: #1a1a1a;
-  margin-bottom: 25px;
+  font-size: 1.35rem;
+  line-height: 1.6;
+  color: #2b2b2b;
+  margin-bottom: 30px;
   font-weight: 400;
+  font-style: italic;
 }
 
 .feedback-card-divider {
-  border-top: 1px dotted #ccc;
-  margin-bottom: 20px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 25px;
 }
 
 .feedback-card-footer {
@@ -133,11 +187,13 @@
 }
 
 .author-avatar {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   object-fit: cover;
   background-color: #eee;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .author-details {

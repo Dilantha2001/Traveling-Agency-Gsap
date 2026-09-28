@@ -65,8 +65,8 @@ const Footer = () => {
 
             <div className="footer-col address-col">
               <h4>OFFICE ADDRESS</h4>
-              <p>128 Horizon Avenue,<br/>Suite 502, San<br/>Francisco, CA 94105,<br/>United States</p>
-              <p className="footer-phone">+1 (415) 555-018</p>
+              <p>No. 45, Galle Road,<br/>Colombo 03,<br/>Western Province,<br/>Sri Lanka</p>
+              <p className="footer-phone">+94 (11) 234-5678</p>
             </div>
           </div>
         </div>
