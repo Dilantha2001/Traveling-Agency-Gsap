@@ -17,7 +17,7 @@ import img8 from '../../assets/coast.webp';
 import img9 from '../../assets/mountain.webp';
 import img10 from '../../assets/safari_savanna.webp';
 import img11 from '../../assets/maldives_beach.webp';
-import img12 from '../../assets/hero.webp';
+
 
 const AboutNevio = () => {
   const containerRef = useRef(null);
@@ -25,7 +25,7 @@ const AboutNevio = () => {
 
 
   const galleryImages = [
-    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11,
   ];
 
   return (
@@ -59,7 +59,7 @@ const AboutNevio = () => {
             {galleryImages.map((imgUrl, index) => (
               <div 
                 key={`m1-${index}`} 
-                className={`nevio-img-wrapper ${index % 2 === 0 ? 'stagger-up' : 'stagger-down'}`}
+                className="nevio-img-wrapper"
               >
                 <img src={imgUrl} alt={`Sri Lanka ${index}`} className="torn-image" />
               </div>
@@ -69,7 +69,7 @@ const AboutNevio = () => {
             {galleryImages.map((imgUrl, index) => (
               <div 
                 key={`m2-${index}`} 
-                className={`nevio-img-wrapper ${index % 2 === 0 ? 'stagger-up' : 'stagger-down'}`}
+                className="nevio-img-wrapper"
               >
                 <img src={imgUrl} alt={`Sri Lanka ${index}`} className="torn-image" />
               </div>

@@ -75,3 +75,29 @@
   align-items: center;
   gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100dvh;
+    padding-bottom: 2rem;
+  }
+  .hero-video-bg {
+    object-position: center;
+  }
+  .hero-hiker {
+    height: 60vh;
+  }
+  .hero-large-text {
+    font-size: 20vw;
+  }
+  .hero-text-block {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-description {
+    margin: 0 auto;
+  }
+}

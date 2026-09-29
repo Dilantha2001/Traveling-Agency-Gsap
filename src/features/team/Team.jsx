@@ -31,7 +31,27 @@ const teamMembers = [
 const Team = () => {
   const containerRef = useRef(null);
 
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%", // Start animation when the top of the section is at 80% of viewport
+        toggleActions: "play reverse play reverse"
+      }
+    });
 
+    tl.fromTo(
+      ".team-header",
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+    )
+    .fromTo(
+      ".team-card-anim-wrapper",
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, stagger: 0.2, ease: "power4.out" },
+      "-=0.5" 
+    );
+  }, { scope: containerRef });
 
   return (
     <section className="team-section" ref={containerRef}>
@@ -46,11 +66,13 @@ const Team = () => {
         {/* Cards */}
         <div className="team-cards-grid">
           {teamMembers.map((member, index) => (
-            <div className="team-card reveal-scale-up" key={index}>
-              <h3 className="team-member-name">{member.name}</h3>
-              <div className="team-image-wrapper">
-                <img src={member.image} alt={member.name} className="team-member-image" />
-                <div className="team-role-badge">{member.role}</div>
+            <div className="team-card-anim-wrapper" style={{ flex: 1, display: 'flex' }} key={index}>
+              <div className="team-card reveal-scale-up" style={{ width: '100%' }}>
+                <h3 className="team-member-name">{member.name}</h3>
+                <div className="team-image-wrapper">
+                  <img src={member.image} alt={member.name} className="team-member-image" />
+                  <div className="team-role-badge">{member.role}</div>
+                </div>
               </div>
             </div>
           ))}

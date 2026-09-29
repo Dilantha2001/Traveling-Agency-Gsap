@@ -150,7 +150,8 @@
   }
   .contact-image-side {
     width: 100%;
-    height: 300px;
+    height: auto;
+    aspect-ratio: 21 / 9;
   }
   .contact-form-side {
     width: 100%;
@@ -159,13 +160,29 @@
 }
 
 @media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 5%;
+  }
   .contact-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
   }
   .form-row {
     flex-direction: column;
+    gap: 15px;
+  }
+  .contact-form {
+    gap: 15px;
   }
   .contact-form-side {
-    padding: 30px 20px;
+    padding: 25px 15px;
+  }
+  .contact-image-side {
+    height: auto;
+    aspect-ratio: auto;
+  }
+  .contact-person-img {
+    height: auto;
+    object-fit: contain;
   }
 }

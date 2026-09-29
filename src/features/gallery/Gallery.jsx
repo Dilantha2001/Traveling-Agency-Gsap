@@ -67,6 +67,7 @@ const Gallery = () => {
             key={panel.id}
             className={`panel ${activeId === panel.id ? 'active' : ''}`}
             onMouseEnter={() => setActiveId(panel.id)}
+            onClick={() => setActiveId(panel.id)}
           >
             <div className="panel-collage">
               {panel.images.map((img, index) => (

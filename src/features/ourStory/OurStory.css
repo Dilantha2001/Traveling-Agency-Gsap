@@ -215,7 +215,18 @@
   .story-card {
     height: 400px;
   }
+  .story-floating-box {
+    padding: 20px;
+    bottom: 20px;
+    width: 90%;
+  }
+  .story-floating-text {
+    font-size: 1.2rem;
+  }
+  .story-floating-header {
+    margin-bottom: 10px;
+  }
   .story-floating-box::before {
-    height: 250px;
+    height: 200px;
   }
 }

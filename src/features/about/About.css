@@ -234,6 +234,19 @@
   .about-title {
     font-size: 1.8rem;
   }
+  .anim-line {
+    flex-wrap: wrap;
+    row-gap: 0.2rem;
+  }
+  .anim-img-wrapper {
+    height: 35px;
+  }
+  .anim-img-wrapper.expanded {
+    width: 90px;
+  }
+  .anim-img {
+    width: 90px;
+  }
   .about-card {
     height: 400px;
   }
@@ -241,6 +254,13 @@
     font-size: 3rem;
   }
   .stat-card {
-    flex: 1 1 100%;
+    flex: 1 1 calc(50% - 0.75rem);
+    padding: 1.5rem 1rem;
+  }
+  .stat-card h3 {
+    font-size: 2.2rem;
+  }
+  .stat-card p {
+    font-size: 0.85rem;
   }
 }

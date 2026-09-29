@@ -54,10 +54,6 @@ const VideoSection = () => {
               <span className="btn-icon">❯</span>
             </button>
           </div>
-          
-          <button className="pause-btn">
-            ❚❚
-          </button>
         </div>
 
       </div>

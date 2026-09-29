@@ -12,7 +12,33 @@ import img2 from '../../assets/ayubowan.webp';
 const Contact = () => {
   const containerRef = useRef(null);
 
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play reverse play reverse"
+      }
+    });
 
+    tl.fromTo(
+      ".contact-wrapper",
+      { y: 50, opacity: 0, scale: 0.95 },
+      { y: 0, opacity: 1, scale: 1, duration: 1, ease: "power3.out" }
+    )
+    .fromTo(
+      ".contact-image-side",
+      { x: -50, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+      "-=0.5"
+    )
+    .fromTo(
+      ".contact-form-side",
+      { x: 50, opacity: 0 },
+      { x: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+      "-=0.8"
+    );
+  }, { scope: containerRef });
 
   return (
     <section className="contact-section" ref={containerRef}>

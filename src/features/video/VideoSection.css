@@ -120,3 +120,14 @@
 .pause-btn:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
+
+@media (max-width: 768px) {
+  .video-text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  /* Remove flex-direction column on enquiry-btn-group so it stays a row */
+  .video-section-wrapper {
+    padding-bottom: 70px;
+  }
+}

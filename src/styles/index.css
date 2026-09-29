@@ -83,3 +83,12 @@ button {
   background-color: #e3bc48;
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .heading-large {
+    font-size: 3rem;
+  }
+}
+

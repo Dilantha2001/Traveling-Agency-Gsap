@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Footer.css';
-import { FaLinkedinIn, FaTwitter, FaInstagram, FaYoutube, FaFacebookF } from 'react-icons/fa';
+import { FaLinkedinIn, FaTwitter, FaInstagram, FaYoutube, FaFacebookF, FaPlane } from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +31,9 @@ const Footer = () => {
           {/* Brand Info */}
           <div className="footer-brand">
             <div className="footer-logo">
-              <span className="logo-icon">✈</span> Pirl
+              <span className="logo-icon">
+                <FaPlane style={{ transform: 'rotate(-45deg)', fontSize: '18px' }} />
+              </span> Pirl
             </div>
             <h3 className="footer-slogan">Journeys for Every Explorer</h3>
             <p className="footer-desc">
