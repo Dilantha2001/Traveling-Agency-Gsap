@@ -60,7 +60,9 @@ const Navbar = () => {
     <nav ref={navRef} className="navbar">
       <div className="navbar-container container">
         <div className="navbar-logo">
-          <FaPlane className="logo-icon" style={{ fontSize: '10px' }} />
+          <div className="logo-icon">
+            <FaPlane />
+          </div>
           <span>Pirl</span>
         </div>
         

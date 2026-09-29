@@ -394,7 +394,8 @@
 
 @media (max-width: 768px) {
   .feedback-section {
-    padding: 4rem 5%;
+    padding: 4rem 5% 0 5%;
+    min-height: auto;
   }
   .feedback-title {
     font-size: 2.5rem;
@@ -419,11 +420,11 @@
     margin: 0 auto;
   }
   .feedback-images-side {
-    height: 450px;
+    height: 200px;
+    margin-bottom: -200px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    overflow: hidden;
   }
   .feedback-spinner-side {
     position: relative;

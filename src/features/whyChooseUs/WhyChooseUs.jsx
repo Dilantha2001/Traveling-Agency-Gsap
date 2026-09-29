@@ -16,74 +16,82 @@ const WhyChooseUs = () => {
   const textRef = useRef(null);
 
   useGSAP(() => {
+    let mm = gsap.matchMedia();
 
-    // The blue curve transition reveal
-    const fullPath = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
-    const midPath = "M 0 100 V 60 Q 50 100 100 60 V 100 z";
-    const endPath = "M 0 100 V 100 Q 50 100 100 100 V 100 z";
+    mm.add({
+      isDesktop: "(min-width: 769px)",
+      isMobile: "(max-width: 768px)"
+    }, (context) => {
+      let { isMobile } = context.conditions;
 
-    gsap.set(pathRef.current, { attr: { d: fullPath } });
+      // The blue curve transition reveal
+      const fullPath = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
+      const midPath = "M 0 100 V 60 Q 50 100 100 60 V 100 z";
+      const endPath = "M 0 100 V 100 Q 50 100 100 100 V 100 z";
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top", // Pins the section when it hits the top
-        end: "+=250%", // Increased pinning distance so there is time to read and then animate out
-        pin: true,
-        scrub: true, // Syncs perfectly to prevent jumping after pin
-        pinSpacing: true
-      }
+      gsap.set(pathRef.current, { attr: { d: fullPath } });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top", // Pins the section when it hits the top
+          end: "+=250%", // Increased pinning distance so there is time to read and then animate out
+          pin: true,
+          scrub: true, // Syncs perfectly to prevent jumping after pin
+          pinSpacing: true
+        }
+      });
+
+      // Step 0: Pause on the blue screen so the user sees it pinned
+      tl.to({}, {duration: 1});
+
+      // Step 1: Fade and hide the initial "Pirl" text
+      tl.to(textRef.current, {
+        autoAlpha: 0,
+        y: isMobile ? 0 : -150,
+        scale: 0.8,
+        duration: 0.5,
+        ease: "power2.inOut"
+      }, 1)
+      // Step 2: Animate the blue SVG layer away
+      .to(pathRef.current, {
+        attr: { d: midPath },
+        duration: 0.8,
+        ease: "power2.in"
+      }, 1)
+      .to(pathRef.current, {
+        attr: { d: endPath },
+        duration: 0.8,
+        ease: "power2.out"
+      })
+      .set(overlayRef.current, { pointerEvents: "none" })
+      
+      // Step 3: Pause for reading, then scatter everything!
+      // The header flies up
+      tl.to(".why-header", {
+        y: isMobile ? 0 : -150,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.inOut"
+      }, "+=0.8")
+      
+      // Cards elegantly glide up and fade out sequentially
+      .to(".glass-card", {
+        y: isMobile ? 0 : -150,
+        opacity: 0,
+        scale: isMobile ? 1 : 0.9,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.inOut"
+      }, "<0.2")
+      
+      // Step 4: Zoom into the background image
+      .to(".why-bg-image", {
+        scale: 1.3,
+        duration: 1.5,
+        ease: "power1.inOut"
+      }, "<0.2"); // Starts zooming just as the cards scatter
     });
-
-    // Step 0: Pause on the blue screen so the user sees it pinned
-    tl.to({}, {duration: 1});
-
-    // Step 1: Fade and hide the initial "Pirl" text
-    tl.to(textRef.current, {
-      autoAlpha: 0,
-      y: -150,
-      scale: 0.8,
-      duration: 0.5,
-      ease: "power2.inOut"
-    }, 1)
-    // Step 2: Animate the blue SVG layer away
-    .to(pathRef.current, {
-      attr: { d: midPath },
-      duration: 0.8,
-      ease: "power2.in"
-    }, 1)
-    .to(pathRef.current, {
-      attr: { d: endPath },
-      duration: 0.8,
-      ease: "power2.out"
-    })
-    .set(overlayRef.current, { pointerEvents: "none" })
-    
-    // Step 3: Pause for reading, then scatter everything!
-    // The header flies up
-    tl.to(".why-header", {
-      y: -150,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.inOut"
-    }, "+=0.8")
-    
-    // Cards elegantly glide up and fade out sequentially
-    .to(".glass-card", {
-      y: -150,
-      opacity: 0,
-      scale: 0.9,
-      duration: 1,
-      stagger: 0.15,
-      ease: "power3.inOut"
-    }, "<0.2")
-    
-    // Step 4: Zoom into the background image
-    .to(".why-bg-image", {
-      scale: 1.3,
-      duration: 1.5,
-      ease: "power1.inOut"
-    }, "<0.2"); // Starts zooming just as the cards scatter
 
   }, { scope: containerRef });
 
@@ -121,29 +129,37 @@ const WhyChooseUs = () => {
             <div className="card-icon-wrapper">
               <FaMapMarkedAlt className="card-icon" />
             </div>
-            <h3>Thoughtfully Curated</h3>
-            <p>Hand-picked, personalized itineraries crafted exclusively for your unforgettable Sri Lankan experience.</p>
+            <div className="card-text-content">
+              <h3>Thoughtfully Curated</h3>
+              <p>Hand-picked, personalized itineraries crafted exclusively for your unforgettable Sri Lankan experience.</p>
+            </div>
           </div>
           <div className="glass-card card-2 reveal-scale-up">
             <div className="card-icon-wrapper">
               <FaCompass className="card-icon" />
             </div>
-            <h3>Local Expertise</h3>
-            <p>Discover the hidden gems of the island through authentic, on-the-ground local knowledge.</p>
+            <div className="card-text-content">
+              <h3>Local Expertise</h3>
+              <p>Discover the hidden gems of the island through authentic, on-the-ground local knowledge.</p>
+            </div>
           </div>
           <div className="glass-card card-3 reveal-scale-up">
             <div className="card-icon-wrapper">
               <FaSuitcaseRolling className="card-icon" />
             </div>
-            <h3>Seamless Planning</h3>
-            <p>Enjoy a perfectly stress-free journey with every single detail thoughtfully planned from start to finish.</p>
+            <div className="card-text-content">
+              <h3>Seamless Planning</h3>
+              <p>Enjoy a perfectly stress-free journey with every single detail thoughtfully planned from start to finish.</p>
+            </div>
           </div>
           <div className="glass-card card-4 reveal-scale-up">
             <div className="card-icon-wrapper">
               <FaShieldAlt className="card-icon" />
             </div>
-            <h3>Trusted Worldwide</h3>
-            <p>Thousands of global travelers rely on Pirl for completely seamless and deeply inspiring journeys.</p>
+            <div className="card-text-content">
+              <h3>Trusted Worldwide</h3>
+              <p>Thousands of global travelers rely on Pirl for completely seamless and deeply inspiring journeys.</p>
+            </div>
           </div>
         </div>
       </div>

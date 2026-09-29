@@ -22,7 +22,7 @@
   font-family: var(--font-heading);
   font-size: 3.5rem;
   font-weight: 700;
-  color: #f5d164; /* Yellow title */
+  color: #ffffff; /* White title */
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -31,4 +31,11 @@
   font-size: 2.5rem;
   color: #f5d164; /* Accent Yellow */
   transform: rotate(45deg); /* Point straight right */
+}
+
+@media (max-width: 768px) {
+  .preloader-content {
+    width: 100%;
+    justify-content: center;
+  }
 }

@@ -90,8 +90,9 @@
 .dest-title-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   margin-bottom: 15px;
+  gap: 15px;
 }
 
 .dest-name {
@@ -99,10 +100,12 @@
   font-weight: 400;
   color: #2b2b2b;
   margin: 0;
+  flex: 1;
 }
 
 .dest-price {
   text-align: right;
+  flex-shrink: 0;
 }
 
 .price-from {

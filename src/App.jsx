@@ -30,9 +30,12 @@ function App() {
     }
     window.scrollTo(0, 0);
 
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
     const lenis = new Lenis({
       lerp: 0.03, // Extremely low value for a very heavy, smooth scroll
       smoothWheel: true,
+      smoothTouch: true, // Enable smooth scrolling on touch devices to prevent GSAP jitter
       wheelMultiplier: 0.6, // Further reduced wheel speed to make it feel heavier
     });
     window.lenis = lenis;
