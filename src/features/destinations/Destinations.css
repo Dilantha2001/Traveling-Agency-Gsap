@@ -144,6 +144,14 @@
   transform: scale(1.05);
 }
 
+.dest-img.crop-watermark {
+  transform: scale(1.18) translateY(6%);
+}
+
+.dest-card:hover .dest-img.crop-watermark {
+  transform: scale(1.23) translateY(6%);
+}
+
 @media (max-width: 1024px) {
   .dest-grid {
     grid-template-columns: repeat(2, 1fr);

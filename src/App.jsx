@@ -25,6 +25,11 @@ function App() {
   const [isPreloading, setIsPreloading] = useState(true);
 
   useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
     const lenis = new Lenis({
       lerp: 0.03, // Extremely low value for a very heavy, smooth scroll
       smoothWheel: true,

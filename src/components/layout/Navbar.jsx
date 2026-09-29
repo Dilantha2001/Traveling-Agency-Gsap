@@ -60,7 +60,7 @@ const Navbar = () => {
     <nav ref={navRef} className="navbar">
       <div className="navbar-container container">
         <div className="navbar-logo">
-          <FaPlane className="logo-icon" style={{ fontSize: '14px' }} />
+          <FaPlane className="logo-icon" style={{ fontSize: '10px' }} />
           <span>Pirl</span>
         </div>
         
@@ -71,7 +71,6 @@ const Navbar = () => {
         <ul className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <li><a href="#home" className="active" onClick={(e) => handleScroll(e, 'home')}><span className="dot"></span>Home</a></li>
           <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>About Us</a></li>
-          <li><a href="#packages" onClick={(e) => handleScroll(e, 'packages')}>Packages</a></li>
           <li><a href="#destinations" onClick={(e) => handleScroll(e, 'destinations')}>Destinations</a></li>
           <li><a href="#blog" onClick={(e) => handleScroll(e, 'blog')}>Blog</a></li>
           <li><a href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Contact Us</a></li>

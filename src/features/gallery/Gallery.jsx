@@ -1,59 +1,61 @@
 import React, { useState } from 'react';
 import './Gallery.css';
 
-import img1 from '../../assets/amanjahemal-trains-5227361_1920.webp';
-import img2 from '../../assets/niwantha_niluka-mountain-7897203_1920.webp';
-import img3 from '../../assets/oleksandrpidvalnyi-ocean-7029117_1920.webp';
-import img4 from '../../assets/peographic-temple-3649292_1920.webp';
-import img5 from '../../assets/pexels-andromeda99-17801597.webp';
-import img6 from '../../assets/pexels-charithk-6337422.webp';
-import img7 from '../../assets/pexels-dulshan-33080670.webp';
-import img8 from '../../assets/pexels-gihans-11309702.webp';
-import img9 from '../../assets/pexels-harsha-bokalawala-706195915-36002646.webp';
-import img10 from '../../assets/pexels-pexels-user-178764159-11166072.webp';
-import img11 from '../../assets/pexels-rajitha-fernando-525223-1259789.webp';
-import img12 from '../../assets/pexels-roshan-36537671.webp';
-import img13 from '../../assets/pexels-ruwan-lakmal-326724272-33404365.webp';
-import img14 from '../../assets/pexels-samiulhaquebhuyan-30563640.webp';
-import img15 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp';
-import img16 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873300.webp';
-import img17 from '../../assets/nharshanahw-elephant-3903267_1920.webp';
-import img18 from '../../assets/safari_savanna.webp';
-import img19 from '../../assets/maldives_beach.webp';
-import img20 from '../../assets/coast.webp';
+import imgCult1 from '../../assets/peographic-temple-3649292_1920.webp';
+import imgCult2 from '../../assets/sigiiriya.webp';
+import imgCult3 from '../../assets/culturee.png';
+import imgCult4 from '../../assets/pexels-harsha-bokalawala-706195915-36002646.webp';
 
-import img21 from '../../assets/pexels-charithk-4382096.webp';
+import imgHill1 from '../../assets/amanjahemal-trains-5227361_1920.webp';
+import imgHill2 from '../../assets/niwantha_niluka-mountain-7897203_1920.webp';
+import imgHill3 from '../../assets/mountain.webp';
+import imgHill4 from '../../assets/temp (7).jfif';
+
+import imgBeach1 from '../../assets/oleksandrpidvalnyi-ocean-7029117_1920.webp';
+import imgBeach2 from '../../assets/coast.webp';
+import imgBeach3 from '../../assets/maldives_beach.webp';
+import imgBeach4 from '../../assets/hill.jfif';
+
+import imgWild1 from '../../assets/nharshanahw-elephant-3903267_1920.webp';
+import imgWild2 from '../../assets/safari_savanna.webp';
+import imgWild3 from '../../assets/wild22 (1).jfif';
+import imgWild4 from '../../assets/wild22 (2).jfif';
+
+import imgView1 from '../../assets/2nd.webp';
+import imgView2 from '../../assets/pexels-thilina-alagiyawanna-3266092-31032902.webp';
+import imgView3 from '../../assets/pexels-gihans-11309702.webp';
+import imgView4 from '../../assets/pexels-pexels-user-178764159-11166072.webp';
 
 const panelsData = [
   {
     id: 1,
     title: 'Cultural Heritage',
-    images: [img4, img6, img13, img15]
+    images: [imgCult1, imgCult2, imgCult3, imgCult4]
   },
   {
     id: 2,
     title: 'Hill Country',
-    images: [img1, img2, img7, img8]
+    images: [imgHill1, imgHill2, imgHill3, imgHill4]
   },
   {
     id: 3,
     title: 'Tropical Beaches',
-    images: [img3, img5, img11, img14]
+    images: [imgBeach1, imgBeach2, imgBeach3, imgBeach4]
   },
   {
     id: 4,
     title: 'Wildlife Safari',
-    images: [img17, img18, img21, img12]
+    images: [imgWild1, imgWild2, imgWild3, imgWild4]
   },
   {
     id: 5,
     title: 'Scenic Views',
-    images: [img10, img16, img19, img20]
+    images: [imgView1, imgView2, imgView3, imgView4]
   }
 ];
 
 const Gallery = () => {
-  const [activeId, setActiveId] = useState(1);
+  const [activeId, setActiveId] = useState(3);
 
   return (
     <section className="gallery-section">
@@ -61,7 +63,7 @@ const Gallery = () => {
         <h2>Sri Lanka Destinations</h2>
         <p>Hover over any panel to reveal the destination</p>
       </div>
-      <div className="gallery-container" onMouseLeave={() => setActiveId(1)}>
+      <div className="gallery-container" onMouseLeave={() => setActiveId(3)}>
         {panelsData.map(panel => (
           <div
             key={panel.id}

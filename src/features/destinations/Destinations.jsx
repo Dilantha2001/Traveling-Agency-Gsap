@@ -9,11 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 import img1 from '../../assets/maldives_beach.webp'; // Mirissa
 import img2 from '../../assets/niwantha_niluka-mountain-7897203_1920.webp'; // Ella
 import img3 from '../../assets/coast.webp'; // Galle Fort
-import img4 from '../../assets/peographic-temple-3649292_1920.webp'; // Kandy
+import img4 from '../../assets/culturee.png'; // Kandy
 import img5 from '../../assets/safari_savanna.webp'; // Yala
 import img6 from '../../assets/amanjahemal-trains-5227361_1920.webp'; // Nuwara Eliya
 import img7 from '../../assets/oleksandrpidvalnyi-ocean-7029117_1920.webp'; // Trinco
-import img8 from '../../assets/pexels-thilina-alagiyawanna-3266092-36873202.webp'; // Sigiriya
+import img8 from '../../assets/sigiiriya.jpg'; // Sigiriya
 import img9 from '../../assets/nharshanahw-elephant-3903267_1920.webp'; // Minneriya
 
 const packagesData = [
@@ -168,7 +168,11 @@ const Destinations = () => {
                 <p className="dest-desc">{pkg.description}</p>
               </div>
               <div className="dest-img-wrapper">
-                <img src={pkg.image} alt={pkg.title} className="dest-img" />
+                <img 
+                  src={pkg.image} 
+                  alt={pkg.title} 
+                  className={`dest-img ${pkg.id === 4 ? 'crop-watermark' : ''}`} 
+                />
               </div>
             </div>
           ))}

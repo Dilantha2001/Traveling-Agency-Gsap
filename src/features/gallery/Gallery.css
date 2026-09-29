@@ -82,6 +82,11 @@
   grid-row: 1 / 4;
 }
 
+/* Specific fix for the elephant image in the Wildlife Safari panel (4th panel) */
+.panel:nth-child(4) .collage-img:nth-child(1) {
+  object-position: left center;
+}
+
 /* Second image top right */
 .collage-img:nth-child(2) {
   grid-column: 3 / 4;
@@ -98,6 +103,11 @@
 .collage-img:nth-child(4) {
   grid-column: 3 / 4;
   grid-row: 3 / 4;
+}
+
+/* Specific fix for the dancer image in the Cultural Heritage panel (1st panel) */
+.panel:nth-child(1) .collage-img:nth-child(4) {
+  object-position: top center;
 }
 
 /* Solid light overlay to hide image initially and show black text */

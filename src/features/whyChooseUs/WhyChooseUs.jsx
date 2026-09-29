@@ -16,17 +16,6 @@ const WhyChooseUs = () => {
   const textRef = useRef(null);
 
   useGSAP(() => {
-    // Parallax background
-    gsap.to(".why-bg-image", {
-      yPercent: 20,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true
-      }
-    });
 
     // The blue curve transition reveal
     const fullPath = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
@@ -41,7 +30,7 @@ const WhyChooseUs = () => {
         start: "top top", // Pins the section when it hits the top
         end: "+=250%", // Increased pinning distance so there is time to read and then animate out
         pin: true,
-        scrub: 1, // Smoothly ties the transition animation to the user's scroll progress!
+        scrub: true, // Syncs perfectly to prevent jumping after pin
         pinSpacing: true
       }
     });
