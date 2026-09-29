@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
+import Preloader from './components/layout/Preloader';
 import Navbar from './components/layout/Navbar';
 import Hero from './features/hero/Hero';
 import About from './features/about/About';
@@ -21,12 +22,15 @@ import VideoSection from './features/video/VideoSection';
 import Footer from './components/layout/Footer';
 
 function App() {
+  const [isPreloading, setIsPreloading] = useState(true);
+
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.03, // Extremely low value for a very heavy, smooth scroll
       smoothWheel: true,
       wheelMultiplier: 0.6, // Further reduced wheel speed to make it feel heavier
     });
+    window.lenis = lenis;
 
     lenis.on('scroll', ScrollTrigger.update);
 
@@ -45,6 +49,7 @@ function App() {
 
   return (
     <>
+      {isPreloading && <Preloader onComplete={() => setIsPreloading(false)} />}
       <Navbar />
       <Hero />
       <About />

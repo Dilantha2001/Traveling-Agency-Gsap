@@ -138,7 +138,7 @@ const Testimonials = () => {
   }, { scope: containerRef });
 
   return (
-    <section className="feedback-section" ref={containerRef}>
+    <section id="blog" className="feedback-section" ref={containerRef}>
       
       {/* Testimonials Header */}
       <div className="feedback-main-header reveal-scale-up">

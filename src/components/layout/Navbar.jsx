@@ -43,11 +43,24 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleScroll = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      if (window.lenis) {
+        window.lenis.scrollTo(element, { offset: -50, duration: 1.5 });
+      } else {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav ref={navRef} className="navbar">
       <div className="navbar-container container">
         <div className="navbar-logo">
-          <FaPlane className="logo-icon" style={{ fontSize: '8px' }} />
+          <FaPlane className="logo-icon" style={{ fontSize: '14px' }} />
           <span>Pirl</span>
         </div>
         
@@ -56,12 +69,12 @@ const Navbar = () => {
         </div>
 
         <ul className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          <li><a href="#" className="active" onClick={toggleMobileMenu}><span className="dot"></span>Home</a></li>
-          <li><a href="#" onClick={toggleMobileMenu}>About Us</a></li>
-          <li><a href="#" onClick={toggleMobileMenu}>Packages</a></li>
-          <li><a href="#" onClick={toggleMobileMenu}>Destinations</a></li>
-          <li><a href="#" onClick={toggleMobileMenu}>Blog</a></li>
-          <li><a href="#" onClick={toggleMobileMenu}>Contact Us</a></li>
+          <li><a href="#home" className="active" onClick={(e) => handleScroll(e, 'home')}><span className="dot"></span>Home</a></li>
+          <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>About Us</a></li>
+          <li><a href="#packages" onClick={(e) => handleScroll(e, 'packages')}>Packages</a></li>
+          <li><a href="#destinations" onClick={(e) => handleScroll(e, 'destinations')}>Destinations</a></li>
+          <li><a href="#blog" onClick={(e) => handleScroll(e, 'blog')}>Blog</a></li>
+          <li><a href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Contact Us</a></li>
         </ul>
       </div>
     </nav>

@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import './Hero.css';
-import heroVideo from '../../assets/srilanka_nature.mp4';
+import heroVideo from '../../assets/hero (2).mp4';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +29,7 @@ const Hero = () => {
   }, { scope: containerRef });
 
   return (
-    <section className="hero-section" ref={containerRef}>
+    <section id="home" className="hero-section" ref={containerRef}>
       <video 
         className="hero-video-bg"
         src={heroVideo}

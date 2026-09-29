@@ -41,7 +41,7 @@ const Contact = () => {
   }, { scope: containerRef });
 
   return (
-    <section className="contact-section" ref={containerRef}>
+    <section id="contact" className="contact-section" ref={containerRef}>
       {/* Background Image - Removed as requested */}
       {/* 
       <div className="contact-bg">

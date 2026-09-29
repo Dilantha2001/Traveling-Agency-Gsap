@@ -99,7 +99,7 @@ const WhyChooseUs = () => {
   }, { scope: containerRef });
 
   return (
-    <section className="why-choose-us-section" ref={containerRef}>
+    <section id="packages" className="why-choose-us-section" ref={containerRef}>
       {/* SVG Blue Transition Overlay */}
       <div className="why-svg-overlay" ref={overlayRef}>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ width: '100%', height: '100%', display: 'block' }}>

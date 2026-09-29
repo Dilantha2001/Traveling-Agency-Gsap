@@ -327,6 +327,44 @@
   transform: rotate(45deg);
 }
 
+@media (max-width: 1440px) {
+  .feedback-section {
+    padding: 5rem 5% 2rem 5%;
+  }
+  .feedback-main-header {
+    margin-bottom: 20px;
+  }
+  .feedback-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  .feedback-card {
+    padding: 25px;
+  }
+  .feedback-card-body {
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+  }
+  .feedback-images-side {
+    height: 450px;
+  }
+  .scatter-collage-container {
+    transform: scale(0.7);
+    transform-origin: center right;
+  }
+  .testi-parentCircle {
+    width: 350px;
+    height: 350px;
+  }
+  .feedback-spinner-side {
+    left: -100px;
+  }
+  .testi-rotator {
+    top: 139px; /* adjusted for smaller circle */
+    left: 314px;
+  }
+}
+
 @media (max-width: 1024px) {
   .feedback-content-wrapper {
     padding-left: 0;

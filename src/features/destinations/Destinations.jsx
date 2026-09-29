@@ -131,7 +131,7 @@ const Destinations = () => {
   }, { scope: containerRef, dependencies: [activeFilter] });
 
   return (
-    <section className="destinations-section" ref={containerRef}>
+    <section id="destinations" className="destinations-section" ref={containerRef}>
       <div className="dest-container">
         
         {/* Header */}
