@@ -30,34 +30,56 @@ function App() {
     }
     window.scrollTo(0, 0);
 
-    ScrollTrigger.config({ ignoreMobileResize: true });
+    ScrollTrigger.config({ 
+      ignoreMobileResize: true,
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load,resize"
+    });
 
+    // Premium silky smooth Lenis configuration
     const lenis = new Lenis({
-      lerp: 0.03, // Extremely low value for a very heavy, smooth scroll
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential ease-out for instant response + smooth glide
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
-      smoothTouch: true, // Enable smooth scrolling on touch devices to prevent GSAP jitter
-      wheelMultiplier: 0.6, // Further reduced wheel speed to make it feel heavier
+      wheelMultiplier: 1.0, // Natural 1:1 wheel sensitivity
+      touchMultiplier: 1.5,
+      infinite: false,
     });
     window.lenis = lenis;
 
+    // Sync Lenis scroll with GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
+    const tickerCallback = (time) => {
       lenis.raf(time * 1000);
-    });
+    };
 
+    gsap.ticker.add(tickerCallback);
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      gsap.ticker.remove(tickerCallback);
       lenis.destroy();
     };
   }, []);
+
+  const handlePreloaderComplete = () => {
+    setIsPreloading(false);
+    document.body.style.overflow = '';
+    if (window.lenis) {
+      window.lenis.start();
+    }
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+  };
 
 
 
   return (
     <>
-      {isPreloading && <Preloader onComplete={() => setIsPreloading(false)} />}
+      {isPreloading && <Preloader onComplete={handlePreloaderComplete} />}
       <Navbar />
       <Hero />
       <About />

@@ -30,6 +30,8 @@
   object-fit: cover;
   position: absolute;
   top: -10%;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .video-overlay {

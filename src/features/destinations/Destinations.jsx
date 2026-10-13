@@ -13,7 +13,7 @@ import img4 from '../../assets/culturee.png'; // Kandy
 import img5 from '../../assets/safari_savanna.webp'; // Yala
 import img6 from '../../assets/amanjahemal-trains-5227361_1920.webp'; // Nuwara Eliya
 import img7 from '../../assets/oleksandrpidvalnyi-ocean-7029117_1920.webp'; // Trinco
-import img8 from '../../assets/sigiiriya.jpg'; // Sigiriya
+import img8 from '../../assets/sigiiriya.webp'; // Sigiriya (optimized webp instead of 5MB jpg)
 import img9 from '../../assets/nharshanahw-elephant-3903267_1920.webp'; // Minneriya
 
 const packagesData = [

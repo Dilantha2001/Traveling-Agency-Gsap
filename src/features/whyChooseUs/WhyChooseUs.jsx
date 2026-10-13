@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
           start: "top top", // Pins the section when it hits the top
           end: "+=250%", // Increased pinning distance so there is time to read and then animate out
           pin: true,
-          scrub: true, // Syncs perfectly to prevent jumping after pin
+          scrub: 1, // Smooth scrub catchup prevents abrupt movement
           pinSpacing: true
         }
       });

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap');
+@import 'lenis/dist/lenis.css';
 
 :root {
   --bg-color: #03080a;
@@ -17,11 +18,22 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: initial;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
 body {
   font-family: var(--font-primary);
   background-color: var(--bg-color);
   color: var(--text-primary);
   overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
